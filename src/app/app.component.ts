@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     if (this.deviceDetectorService.isMobile()) {
-      this.router.navigate(['/home']); // Cambia '/ruta-movil' por la ruta a la que quieres redirigir en dispositivos móviles
+      this.router.navigate(['/home']);
     }
   }
 }
