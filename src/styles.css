@@ -1,1 +1,130 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root{
+    --color-background: #222;
+    --color-background-secondary: #353535;
+    --color-brown: #e6be63;
+    --color-text-secondary: #888;
+}
+app-root{
+    background-color: #111;
+    display: flex;
+    min-height: 100vh;
+    padding: 40px;
+    gap: 20px;
+    width: 100vw;
+    flex-wrap: wrap;
+}
+body{ color: white;font-weight: 300; overflow-x: hidden;}
+body::-webkit-scrollbar {
+    width: 5px; /* Ancho de la barra de desplazamiento */
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: rgb(32, 32, 32); /* Color de la pista de la barra de desplazamiento */
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background: #444; /* Color del control deslizante de la barra de desplazamiento */
+  }
+  
+  body::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color del control deslizante de la barra de desplazamiento al pasar el mouse */
+  }
+.title-section{
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+.sep{
+    width: 50px;
+    height: 10px;
+    background-color: var(--color-brown);
+    margin: 15px 0px;
+    animation: width-open 1s forwards ease;
+}
+@keyframes width-open {
+    0% { width: 0px; }
+    50% { width: 0px; }
+    100% { width: 50px; }
+}
+
+app-about .title-section, app-resume .title-section, app-portfolio .title-section, app-contact .title-section{
+    animation: fade-open 2s forwards ease;
+}
+app-about > *:not(.title-section):not(.sep), 
+app-resume > *:not(.title-section):not(.sep), 
+app-portfolio > *:not(.title-section):not(.sep):not(.projects-container):not(app-project), 
+app-contact > *:not(.title-section):not(.sep)
+{
+    opacity: 0;
+    animation: fade-open 2s forwards ease;
+    animation-delay: 1s;
+}
+@keyframes fade-open {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+app-about-card{
+    width: calc(50% - 20px);
+    background-color: var(--color-background-secondary);
+    box-shadow: -1px -1px  rgba(0, 0, 0, 0.4), 1px 1px rgba(255, 255, 255, 0.1) inset;
+    border-radius: 20px;
+    padding: 20px;
+    display:flex;
+    gap: 20px;
+}
+app-project{
+    width: calc(33.33% - 20px);
+    flex-direction: column;
+    display: flex;
+    gap: 10px;
+    transform: scale(0);
+    animation: zoom 1s ease forwards;
+}
+@keyframes zoom{
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+.card-container{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+@media(max-width: 1400px){
+    app-project{
+        width: calc(50% - 20px);
+    }
+}
+@media(max-width: 1000px) and (min-width: 880px){
+    app-about-card, app-project{
+        width: 100%;
+    }
+}
+@media (max-width: 700px){
+    app-about-card, app-project{
+        width: 100%;
+    }
+    app-root{
+        align-items: center;
+    }
+}
+@media (max-width: 450px) {
+    app-root{
+        padding: 10px;
+    }
+}
+
+.title-container{
+    display: flex;
+    gap: 15px;
+    font-size: 1.6rem;
+    text-align: center;
+    height: fit-content;
+    align-items: center;
+    font-weight: 600;
+}
