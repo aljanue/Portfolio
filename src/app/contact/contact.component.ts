@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SendingService } from '../send-form.service';
+import { Location } from '@angular/common';
+import { Router } from '@angular/router'; // Importa Router
+
 @Component({
   selector: 'app-contact',
   standalone: true,
@@ -9,14 +12,17 @@ import { SendingService } from '../send-form.service';
 })
 export class ContactComponent {
   title="Contact";
+  currentUrl: string = "";
+
+
+  constructor(private sendingService: SendingService, private location: Location, private router: Router) { } // Inyecta Router
   
-
-  constructor(private sendingService: SendingService) { }
-
   ngOnInit(): void{
     if(this.sendingService.getSending()){
       this.sendForm();
     }
+    this.currentUrl = window.location.origin + this.router.createUrlTree(['/check-form']).toString(); // Genera la URL completa a check-form
+    console.log(this.currentUrl);
   }
 
   change(): void {
