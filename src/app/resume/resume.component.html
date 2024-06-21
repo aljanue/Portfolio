@@ -1,0 +1,31 @@
+<h1 class="title-section">{{title}}</h1>
+<div class="sep"></div>
+<div class="flex flex-col w-full gap-12">
+    @for(item of sections; track item.id){
+        <app-timeline-section [title] = "item.title" [img] = "item.img" [timeline] = "item.subsections"></app-timeline-section>
+    }
+    <div class="skills-container">
+        <h2 class="title-container">My Skills</h2>
+        <div class="skills">
+            <ul>
+                <li [class.active]="selectedCategory === 'All'" (click)="filterByCategory('All')">All</li>
+                @for(category of skills; track category.id){
+                  <li [class.active]="selectedCategory === category.tag" (click)="filterByCategory(category.tag)">{{category.tag}}</li>
+                }
+              </ul>
+              <hr>
+              @for(category of skills; track category.id){
+                @if(selectedCategory === 'All' || selectedCategory === category.tag) {
+                  @for(item of category.skills; track item.id){
+                    <div class="skill">
+                      <h3>{{item.name}}</h3>
+                      <div class="progress-bar">
+                        <div class="progress" [style.width]="item.percentage + '%'"></div>
+                      </div>
+                    </div>
+                  }
+                }
+              }
+        </div>
+    </div>
+</div>

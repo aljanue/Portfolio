@@ -1,0 +1,27 @@
+<h1 class="title-section">{{title}}</h1>
+<div class="sep"></div>
+<form class= "flex flex-col" action="https://api.web3forms.com/submit" method="POST">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+    <label for="subject">Subject</label>
+    <input type="text" id="subject" name="subject" required>
+    <label for="message">Message</label>
+    <textarea id="message" name="message" required rows="10"></textarea>
+    
+    <div class="btn-container">
+        <button class="btn" (click)="change()" type="submit">
+          <span class="text">Submit</span>
+        </button>
+        <button class="btn-hover" (click)="change()" type="submit">
+            <span class="text-hover">Send</span>
+          </button>
+    </div>
+    <p class="ps-3" id="continue"></p>
+
+    <input type="hidden" name="from_name" value="Portfolio">
+    <input type="hidden" name="redirect" value="http://localhost:4200/check-form">
+    <input type="hidden" name="apikey" value="04824499-3257-46e6-8581-f0c9921f1519">
+
+</form>

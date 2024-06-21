@@ -1,0 +1,89 @@
+input, textarea{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #999;
+    box-sizing: border-box;
+    background-color: var(--color-background-secondary);
+    border-radius: 10px;
+    transition: all ease 1s;
+}
+input:focus, textarea:focus{
+    background-color: var(--color-background);
+    border: 1px solid var(--color-brown);
+}
+label{
+    color: var(--color-text-secondary);
+    padding-left: 10px;
+}
+.btn-container {
+    width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: auto;
+    position:  relative;
+    border: 2px solid var(--color-text-secondary);
+    border-radius: 40px;
+    overflow: hidden;
+  }
+  
+  .btn {
+    width: 120px;
+    height: 60px;
+    background-color: var(--color-background-secondary);
+    color: white;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .btn-container.active {
+     animation: animate-line 0.3s ease-in, spinner 0.5s infinite;
+     animation-delay: 0.1s, 0.5s;
+    -webkit-animation-fill-mode: forwards;
+  }
+  .btn-hover{
+    z-index: 2;
+    position: absolute;
+    width: 0;
+    height: 100%;
+    background-color: var(--color-text-secondary);
+    top: 0;
+    left: 0;
+    transition: all 1s ease;
+    opacity: 0;
+    overflow: hidden;
+  }
+  .text-hover{
+    color:rgb(25, 25, 25);
+  }
+  .btn-container:hover .btn-hover{
+    width: 100%;
+    opacity: 1;
+  }
+  .btn-container.active .text {
+    display: none;
+    font-size: 20px;
+  }
+  
+  @keyframes animate-line {
+    0% {
+      width: 120px;
+    }
+    
+    100% {
+      width: 60px;
+      background-color: var(--color-background);
+      border-bottom-color: transparent;
+      border-right-color: transparent;
+    }
+  
+  }
+  
+  @keyframes spinner {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+

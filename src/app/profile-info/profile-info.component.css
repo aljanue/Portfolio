@@ -1,0 +1,22 @@
+.icon{
+    width: 45px;
+    height: 45px;
+    border: 1px solid rgba(230, 190, 99, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    fill: var(--color-brown);
+}
+.socialmedia{
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+    font-size: 0.8rem;
+}
+.name{
+    font-weight: 300;
+}
+.info-container{
+    display:flex;
+    gap: 10px;
+}
