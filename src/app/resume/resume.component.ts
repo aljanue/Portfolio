@@ -75,7 +75,7 @@ export class ResumeComponent {
         id: 5,
         name: "Django",
         img: "",
-        percentage: 40,
+        percentage: 20,
       },
       {
         id: 6,
