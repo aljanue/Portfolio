@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { TimelineSectionComponent } from '../timeline-section/timeline-section.component';
+import { AboutCardComponent } from '../about-card/about-card.component';
 
 @Component({
   selector: 'app-resume',
   standalone: true,
-  imports: [TimelineSectionComponent],
+  imports: [TimelineSectionComponent, AboutCardComponent],
   templateUrl: './resume.component.html',
   styleUrl: './resume.component.css'
 })
@@ -176,6 +177,25 @@ export class ResumeComponent {
         }]}
       ];
 
+      honours=[
+        {title:"Web Application Development", description: "HTML, CSS, JS, JSP/JavaServlet & PHP. Model, View, Controller (MVC)."},
+        {title: "Front-End Development", description: "HTML, CSS, JS. Three.js, D3.js, Canvas..."},
+        {title: "Databases and Storage Systems", description: "Relational Model, Entity-Relationship Model, SQL Queries..."},
+        {title: "Animation", description: "Development of Python Addons for Blender, Modeling, Rigging..."},
+        {title: "Computer Graphics", description: "Unity. Shaders, Lighting..."},
+        {title: "Structure of Computers", description: "Memory, Input / Output, Peripherals, Buses..."},
+      ];
+
+      certifications=[
+        {title:"Design Thinking and Innovation", description:"Certified by: Capgemini. User interfaces and usability."},
+        {title:"Testing and Continuous Integration", description:"Certified by: Capgemini. White box testing in Java."},
+        {title:"Red Hat System Administration I", description:"Certified by: RedHat Academy. Administration and management of Linux systems."},
+        {title:"CCNAv7: Introduction to Networks", description:"Certified by: Cisco Networking Academy. Network configuration and use of TCP/IP protocols."},
+        {title:"Introduction to Artificial Intelligence", description:"Certified by: Amazon Web Services (AWS). Machine Language, Artificial Intelligence and Deep Learning."},
+        {title:"Mobile Apps Development", description:"Certified by: Google. Skills and concepts for creating applications for mobile devices."},
+        {title:"Fundamentals of Digital Marketing", description:"Certified by: Google. Learn the basics of digital marketing and boost your business or career."},
+      ]
+
       ngOnInit() {
         this.skills.forEach(skillCategory => {
           skillCategory.skills.forEach(skill => {
@@ -188,6 +208,7 @@ export class ResumeComponent {
           });
         });
       }
+
 
       filterByCategory(category: string) {
   this.selectedCategory = category;

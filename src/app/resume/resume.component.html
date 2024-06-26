@@ -4,7 +4,24 @@
     @for(item of sections; track item.id){
         <app-timeline-section [title] = "item.title" [img] = "item.img" [timeline] = "item.subsections"></app-timeline-section>
     }
-    <div class="skills-container">
+    
+    <div class="info-container">
+      <h2 class="title-container">Honours in</h2>
+      <div class="card-container">
+        @for(honour of honours; track honour.title){
+          <app-about-card [title]="honour.title" [description]="honour.description"></app-about-card>
+        }
+      </div>
+    </div>
+    <div class="info-container">
+        <h2 class="title-container">Certifications</h2>
+        <div class="card-container">
+            @for(certification of certifications; track certification.title){
+              <app-about-card class="w-full"[title]="certification.title" [description]="certification.description"></app-about-card>
+            }
+        </div>
+    </div>
+    <div class="info-container">
         <h2 class="title-container">My Skills</h2>
         <div class="skills">
             <ul>
@@ -28,4 +45,5 @@
               }
         </div>
     </div>
+
 </div>
