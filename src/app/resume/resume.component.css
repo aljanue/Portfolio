@@ -79,3 +79,12 @@
         padding: 0 5px;
     }
 }
+.p-end-13{
+    padding-right: 13rem;
+}
+@media (width < 1025px){
+    .p-end-13{padding-right: 0 !important;}
+}
+@media (1025px < width < 1668px){
+    .p-end-13{padding-right: 3rem;}
+}
