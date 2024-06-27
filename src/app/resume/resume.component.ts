@@ -21,13 +21,13 @@ export class ResumeComponent {
       {
         id:1,
         title:"Multimedia Engineering Degree",
-        date:"2023 - NOW",
+        date:"2022 - NOW",
         place:"University of Valencia (SPAIN)",
       },
       {
         id:2,
         title:"Telecommunications Electronics Engineering Degree",
-        date:"2019 - 2022 (Not Finished)",
+        date:"2019 - 2022",
         place:"University of Valencia (SPAIN)",
       },
       {
@@ -37,7 +37,7 @@ export class ResumeComponent {
         place:"Colegio Salesianas - María Auxiliadora, Valencia (SPAIN)",
       }
     ]
-  },
+  }
   ]
   skills = [
     {
