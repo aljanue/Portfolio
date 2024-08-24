@@ -1,7 +1,7 @@
 <h1 class="title-section">{{title}}</h1>
 <div class="sep"></div>
 <div class="flex flex-col w-full gap-12">
-  <div class="flex flex-wrap justify-between w-full p-end-13 gap-x-11 gap-y-11">
+  <div class="flex flex-wrap w-full p-end-13 gap-x-16 gap-y-11">
     @for(item of sections; track item.id){
         <app-timeline-section [title] = "item.title" [img] = "item.img" [timeline] = "item.subsections"></app-timeline-section>
     }
