@@ -208,6 +208,7 @@ export class ResumeComponent {
         {title:"Mobile Apps Development", description:"Certified by: Google. Skills and concepts for creating applications for mobile devices."},
         {title:"Fundamentals of Digital Marketing", description:"Certified by: Google. Learn the basics of digital marketing and boost your business or career."},
         {title:"Effective Communication", description:"Certified by: Santander. Learn the keys to effective communication and apply them in your day-to-day work."},
+        {title:"Leadership", description:"Certified by: Santander. Explore the key skills, strategies and mindsets needed to excel in leadership roles."}
       ]
 
       ngOnInit() {
