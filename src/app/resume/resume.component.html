@@ -2,7 +2,7 @@
 <div class="sep"></div>
 <div class="flex flex-col w-full gap-12">
   <div class="flex flex-wrap w-full p-end-13 gap-x-16 gap-y-11">
-    @for(item of sections; track item.id){
+    @for(item of sections; track item.title){
         <app-timeline-section [title] = "item.title" [img] = "item.img" [timeline] = "item.subsections"></app-timeline-section>
     }
   </div>
@@ -28,14 +28,14 @@
         <div class="skills">
             <ul>
                 <li [class.active]="selectedCategory === 'All'" (click)="filterByCategory('All')">All</li>
-                @for(category of skills; track category.id){
+                @for(category of skills; track category.tag){
                   <li [class.active]="selectedCategory === category.tag" (click)="filterByCategory(category.tag)">{{category.tag}}</li>
                 }
               </ul>
               <hr>
-              @for(category of skills; track category.id){
+              @for(category of skills; track category.tag){
                 @if(selectedCategory === 'All' || selectedCategory === category.tag) {
-                  @for(item of category.skills; track item.id){
+                  @for(item of category.skills; track item.name){
                     <div class="skill">
                       <h3>{{item.name}}</h3>
                       <div class="progress-bar">

@@ -16,28 +16,29 @@ export class PortfolioComponent {
       category: "Front-End",
       projects: [
         {
-          id: 1,
+          title: "Quiz Tour c de c",
+          img: "assets/img/cdec.png",
+          tags: ["HTML", "CSS", "JS"],
+          url: "https://tourcdec.netlify.app"
+        },{
           title: "CatChef",
           img: "assets/img/catchef.png",
           tags: ["HTML", "CSS", "JS"],
           url: "https://mural.uv.es/aljanue/CatChef/index.html"
         },
         {
-          id: 2,
           title: "Nocuk",
           img: "assets/img/nocuk.png",
           tags: ["Angular", "Tailwind"],
           url: "https://aljanue.github.io/html/nocuk.html"
         },
         {
-          id: 8,
           title: "Espe's Portfolio",
           img: "assets/img/espe.png",
           tags: ["HTML", "CSS", "JS"],
           url: "https://espemoragues.github.io/"
         },
         {
-          id: 9,
           title: "Old Portfolio",
           img: "assets/img/oldportfolio.png",
           tags: ["HTML", "CSS", "JS"],

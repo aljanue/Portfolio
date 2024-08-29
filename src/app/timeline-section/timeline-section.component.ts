@@ -10,5 +10,5 @@ import { Component, Input } from '@angular/core';
 export class TimelineSectionComponent {
   @Input() title = "";
   @Input() img = "";
-  @Input() timeline: { id: number; title: string; date: string; place: string; }[] = [];
+  @Input() timeline: { title: string; date: string; place: string; }[] = [];
 }

@@ -11,7 +11,7 @@
 <div class="projects-container">
     @for(category of projects; track category.category){
         @if(selectedCategory === 'All' || selectedCategory === category.category) {
-        @for(projects of category.projects; track projects.id){
+        @for(projects of category.projects; track projects.title){
             <app-project [title]="projects.title" [url]="projects.url" [img]="projects.img" [tags]="projects.tags"></app-project>
         }
     }
