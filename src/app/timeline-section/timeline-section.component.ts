@@ -5,10 +5,10 @@ import { Component, Input } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './timeline-section.component.html',
-  styleUrl: './timeline-section.component.css'
+  styleUrl: './timeline-section.component.css',
 })
 export class TimelineSectionComponent {
-  @Input() title = "";
-  @Input() img = "";
-  @Input() timeline: { title: string; date: string; place: string; }[] = [];
+  @Input() title = '';
+  @Input() img = '';
+  @Input() timeline: { title: string; date: string; place: string }[] = [];
 }

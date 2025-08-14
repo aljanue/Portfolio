@@ -8,10 +8,9 @@ describe('CheckFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CheckFormComponent]
-    })
-    .compileComponents();
-    
+      imports: [CheckFormComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(CheckFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

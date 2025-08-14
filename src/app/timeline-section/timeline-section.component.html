@@ -1,19 +1,24 @@
 <div class="title-container mt-6">
-    <div class="svg-container">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
-            <path [attr.d]="img"/>
-        </svg>
-    </div>
-    <h1>{{title}}</h1>
+  <div class="svg-container">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="30"
+      height="30"
+      viewBox="0 0 24 24"
+    >
+      <path [attr.d]="img" />
+    </svg>
+  </div>
+  <h1>{{ title }}</h1>
 </div>
 <ul>
-    @for(item of timeline; track item.title){
-        <li class="timeline-item">
-            <div>
-                <h2 class="font-bold">{{item.title}}</h2>
-                <p class="date">{{item.date}}</p>
-                <p class="place">{{item.place}}</p>
-            </div>
-        </li>
-    }
+  @for (item of timeline; track item.title) {
+    <li class="timeline-item">
+      <div>
+        <h2 class="font-bold">{{ item.title }}</h2>
+        <p class="date">{{ item.date }}</p>
+        <p class="place">{{ item.place }}</p>
+      </div>
+    </li>
+  }
 </ul>

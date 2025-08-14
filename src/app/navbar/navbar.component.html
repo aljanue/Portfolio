@@ -1,10 +1,46 @@
 <nav>
-    <ul>
-        <li><a id="home" routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
-        <li><a routerLink="/about" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">About</a></li>
-        <li><a routerLink="/resume" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Resume</a></li>
-        <li><a routerLink="/portfolio" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Portfolio</a></li>
-        <li><a routerLink="/contact" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Contact</a></li>
-    </ul>
-    <app-burger-menu></app-burger-menu>
+  <ul>
+    <li>
+      <a
+        id="home"
+        routerLink="/home"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Home</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="/about"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >About</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="/resume"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Resume</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="/portfolio"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Portfolio</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="/contact"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Contact</a
+      >
+    </li>
+  </ul>
+  <app-burger-menu></app-burger-menu>
 </nav>

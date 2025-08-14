@@ -1,57 +1,56 @@
-svg{
-    fill: var(--color-brown);
+svg {
+  fill: var(--color-brown);
 }
-.svg-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-    border-radius: 100%;
-    -webkit-box-shadow: inset 1px 2px 11px -9px rgba(207,207,207,0.75);
-    -moz-box-shadow: inset 1px 2px 11px -9px rgba(207,207,207,0.75);
-    box-shadow: inset 1px 2px 11px -9px rgba(207,207,207,0.75);
+.svg-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  -webkit-box-shadow: inset 1px 2px 11px -9px rgba(207, 207, 207, 0.75);
+  -moz-box-shadow: inset 1px 2px 11px -9px rgba(207, 207, 207, 0.75);
+  box-shadow: inset 1px 2px 11px -9px rgba(207, 207, 207, 0.75);
 }
 
-ul{
-    padding-left: 10px;
+ul {
+  padding-left: 10px;
 }
 .timeline-item {
-    position: relative;
-    padding-left: 40px;
-    padding-top: 50px;
-  }
-  
-  .timeline-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 10px;
-    height: 100%;
-    width: 1px;
-    background: var(--color-background-secondary);
-  }
-  
-  .timeline-item::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 6px;
-    width: 10px;
-    height: 10px;
-    background: var(--color-brown);
-    border-radius: 50%;
-  }
-  
-  
-  .timeline-item:last-child::before {
-    height: 50%; /* Termina la línea en el último punto */
-  }
+  position: relative;
+  padding-left: 40px;
+  padding-top: 50px;
+}
 
-  .date{
-    color: var(--color-brown);
-  }
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10px;
+  height: 100%;
+  width: 1px;
+  background: var(--color-background-secondary);
+}
 
-  .place{
-    color: var(--color-text-secondary);
-  }
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 6px;
+  width: 10px;
+  height: 10px;
+  background: var(--color-brown);
+  border-radius: 50%;
+}
+
+.timeline-item:last-child::before {
+  height: 50%; /* Termina la línea en el último punto */
+}
+
+.date {
+  color: var(--color-brown);
+}
+
+.place {
+  color: var(--color-text-secondary);
+}

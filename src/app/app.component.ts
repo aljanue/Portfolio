@@ -10,10 +10,13 @@ import { DeviceDetectorService } from './device-detector.service';
   standalone: true,
   imports: [RouterOutlet, NavbarComponent, ProfileComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent implements OnInit {
-  constructor(private router: Router, private deviceDetectorService: DeviceDetectorService) { }
+  constructor(
+    private router: Router,
+    private deviceDetectorService: DeviceDetectorService,
+  ) {}
 
   ngOnInit() {
     if (this.deviceDetectorService.isMobile()) {

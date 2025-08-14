@@ -1,51 +1,74 @@
-<h1 class="title-section">{{title}}</h1>
+<h1 class="title-section">{{ title }}</h1>
 <div class="sep"></div>
 <div class="flex flex-col w-full gap-12">
   <div class="flex flex-wrap w-full p-end-13 gap-x-16 gap-y-11">
-    @for(item of sections; track item.title){
-        <app-timeline-section [title] = "item.title" [img] = "item.img" [timeline] = "item.subsections"></app-timeline-section>
+    @for (item of sections; track item.title) {
+      <app-timeline-section
+        [title]="item.title"
+        [img]="item.img"
+        [timeline]="item.subsections"
+      ></app-timeline-section>
     }
   </div>
-    
-    <div class="info-container">
-      <h2 class="title-container">Honours in</h2>
-      <div class="card-container">
-        @for(honour of honours; track honour.title){
-          <app-about-card [title]="honour.title" [description]="honour.description"></app-about-card>
-        }
-      </div>
-    </div>
-    <div class="info-container">
-        <h2 class="title-container">Certifications</h2>
-        <div class="card-container">
-            @for(certification of certifications; track certification.title){
-              <app-about-card class="w-full"[title]="certification.title" [description]="certification.description"></app-about-card>
-            }
-        </div>
-    </div>
-    <div class="info-container">
-        <h2 class="title-container">My Skills</h2>
-        <div class="skills">
-            <ul>
-                <li [class.active]="selectedCategory === 'All'" (click)="filterByCategory('All')">All</li>
-                @for(category of skills; track category.tag){
-                  <li [class.active]="selectedCategory === category.tag" (click)="filterByCategory(category.tag)">{{category.tag}}</li>
-                }
-              </ul>
-              <hr>
-              @for(category of skills; track category.tag){
-                @if(selectedCategory === 'All' || selectedCategory === category.tag) {
-                  @for(item of category.skills; track item.name){
-                    <div class="skill">
-                      <h3>{{item.name}}</h3>
-                      <div class="progress-bar">
-                        <div class="progress" [style.width]="item.percentage + '%'"></div>
-                      </div>
-                    </div>
-                  }
-                }
-              }
-        </div>
-    </div>
 
+  <div class="info-container">
+    <h2 class="title-container">Honours in</h2>
+    <div class="card-container">
+      @for (honour of honours; track honour.title) {
+        <app-about-card
+          [title]="honour.title"
+          [description]="honour.description"
+        ></app-about-card>
+      }
+    </div>
+  </div>
+  <div class="info-container">
+    <h2 class="title-container">Certifications</h2>
+    <div class="card-container">
+      @for (certification of certifications; track certification.title) {
+        <app-about-card
+          class="w-full"
+          [title]="certification.title"
+          [description]="certification.description"
+        ></app-about-card>
+      }
+    </div>
+  </div>
+  <div class="info-container">
+    <h2 class="title-container">My Skills</h2>
+    <div class="skills">
+      <ul>
+        <li
+          [class.active]="selectedCategory === 'All'"
+          (click)="filterByCategory('All')"
+        >
+          All
+        </li>
+        @for (category of skills; track category.tag) {
+          <li
+            [class.active]="selectedCategory === category.tag"
+            (click)="filterByCategory(category.tag)"
+          >
+            {{ category.tag }}
+          </li>
+        }
+      </ul>
+      <hr />
+      @for (category of skills; track category.tag) {
+        @if (selectedCategory === "All" || selectedCategory === category.tag) {
+          @for (item of category.skills; track item.name) {
+            <div class="skill">
+              <h3>{{ item.name }}</h3>
+              <div class="progress-bar">
+                <div
+                  class="progress"
+                  [style.width]="item.percentage + '%'"
+                ></div>
+              </div>
+            </div>
+          }
+        }
+      }
+    </div>
+  </div>
 </div>

@@ -6,91 +6,95 @@ import { ProjectComponent } from '../project/project.component';
   standalone: true,
   imports: [ProjectComponent],
   templateUrl: './portfolio.component.html',
-  styleUrl: './portfolio.component.css'
+  styleUrl: './portfolio.component.css',
 })
 export class PortfolioComponent {
-  title="Portfolio";
+  title = 'Portfolio';
   selectedCategory = 'All';
-  projects=[
+  projects = [
     {
-      category: "Front-End",
+      category: 'Front-End',
       projects: [
         {
-          title: "Quiz Tour c de c",
-          img: "assets/img/cdec.png",
-          tags: ["HTML", "CSS", "JS"],
-          url: "https://tourcdec.netlify.app"
-        },{
-          title: "CatChef",
-          img: "assets/img/catchef.png",
-          tags: ["HTML", "CSS", "JS"],
-          url: "https://mural.uv.es/aljanue/CatChef/index.html"
+          title: 'Quiz Tour c de c',
+          img: 'assets/img/cdec.png',
+          tags: ['HTML', 'CSS', 'JS'],
+          url: 'https://tourcdec.netlify.app',
         },
         {
-          title: "Nocuk",
-          img: "assets/img/nocuk.png",
-          tags: ["Angular", "Tailwind"],
-          url: "https://aljanue.github.io/html/nocuk.html"
+          title: 'CatChef',
+          img: 'assets/img/catchef.png',
+          tags: ['HTML', 'CSS', 'JS'],
+          url: 'https://mural.uv.es/aljanue/CatChef/index.html',
+        },
+        {
+          title: 'Nocuk',
+          img: 'assets/img/nocuk.png',
+          tags: ['Angular', 'Tailwind'],
+          url: 'https://aljanue.github.io/html/nocuk.html',
         },
         {
           title: "Espe's Portfolio",
-          img: "assets/img/espe.png",
-          tags: ["HTML", "CSS", "JS"],
-          url: "https://espemoragues.github.io/"
+          img: 'assets/img/espe.png',
+          tags: ['HTML', 'CSS', 'JS'],
+          url: 'https://espemoragues.github.io/',
         },
         {
-          title: "Old Portfolio",
-          img: "assets/img/oldportfolio.png",
-          tags: ["HTML", "CSS", "JS"],
-          url: "https://aljanue.github.io/"
-        }
-      ]
-      },
-      {
-        category: "Full-Stack",
-        projects: [{
+          title: 'Old Portfolio',
+          img: 'assets/img/oldportfolio.png',
+          tags: ['HTML', 'CSS', 'JS'],
+          url: 'https://aljanue.github.io/',
+        },
+      ],
+    },
+    {
+      category: 'Full-Stack',
+      projects: [
+        {
           id: 3,
-          title: "Snakers",
-          img: "assets/img/snakers.png",
-          tags: ["HTML", "CSS", "JS", "Java Servlet + JSP", "SQL", "PHP"],
-          url: "https://aljanue.github.io/html/snakers.html"
-        }]
-      },
-      {
-        category: "Addons",
-        projects: [{
+          title: 'Snakers',
+          img: 'assets/img/snakers.png',
+          tags: ['HTML', 'CSS', 'JS', 'Java Servlet + JSP', 'SQL', 'PHP'],
+          url: 'https://aljanue.github.io/html/snakers.html',
+        },
+      ],
+    },
+    {
+      category: 'Addons',
+      projects: [
+        {
           id: 4,
-          title: "Lighting",
-          img: "assets/img/lighting.png",
-          tags: ["Blender", "Python"],
-          url: "https://github.com/aljanue/3-points-lighting"
+          title: 'Lighting',
+          img: 'assets/img/lighting.png',
+          tags: ['Blender', 'Python'],
+          url: 'https://github.com/aljanue/3-points-lighting',
         },
         {
           id: 5,
-          title: "Procedural City",
-          img: "assets/img/city.png",
-          tags: ["Blender", "Python"],
-          url: "https://github.com/aljanue/Procedural-City-Blender-Addon"
+          title: 'Procedural City',
+          img: 'assets/img/city.png',
+          tags: ['Blender', 'Python'],
+          url: 'https://github.com/aljanue/Procedural-City-Blender-Addon',
         },
         {
           id: 6,
-          title: "CSV - BVH Converter",
-          img: "assets/img/converter.png",
-          tags: ["Blender", "Python"],
-          url: "https://github.com/aljanue/CsvToBvh-Converter"
+          title: 'CSV - BVH Converter',
+          img: 'assets/img/converter.png',
+          tags: ['Blender', 'Python'],
+          url: 'https://github.com/aljanue/CsvToBvh-Converter',
         },
         {
           id: 7,
-          title: "Curve Filter",
-          img: "assets/img/curves.png",
-          tags: ["Blender", "Python"],
-          url: "https://github.com/aljanue/MOCAP-Filter"
-        }
-      ]
-      }
-    ];
+          title: 'Curve Filter',
+          img: 'assets/img/curves.png',
+          tags: ['Blender', 'Python'],
+          url: 'https://github.com/aljanue/MOCAP-Filter',
+        },
+      ],
+    },
+  ];
 
-    filterByCategory(category: string) {
-      this.selectedCategory = category;
-    }
+  filterByCategory(category: string) {
+    this.selectedCategory = category;
+  }
 }

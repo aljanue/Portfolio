@@ -1,41 +1,58 @@
-@if(socialmedia =="email") {
-    <a class="info-container" href="mailto:{{info}}">
-
-        <div class="icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
-                <path [attr.d]="icon"/>
-            </svg>
-        </div>
-        <div>
-            <p class="socialmedia">{{socialmedia}}</p>
-            <p class="name">{{info}}</p>
-        </div>
-    </a>
-}
-@else if(url == ""){
-    <div class="info-container">
-        <div class="icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
-                <path [attr.d]="icon"/>
-            </svg>
-        </div>
-        <div>
-            <p class="socialmedia">{{socialmedia}}</p>
-            <p class="name">{{info}}</p>
-        </div>
+@if (socialmedia == "email") {
+  <a class="info-container" href="mailto:{{ info }}">
+    <div class="icon">
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+      >
+        <path [attr.d]="icon" />
+      </svg>
     </div>
-}
-@else {
-    <a class="info-container" href="{{url}}" target="_blank">
-
-        <div class="icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
-                <path [attr.d]="icon"/>
-            </svg>
-        </div>
-        <div>
-            <p class="socialmedia">{{socialmedia}}</p>
-            <p class="name">{{info}}</p>
-        </div>
-    </a>
+    <div>
+      <p class="socialmedia">{{ socialmedia }}</p>
+      <p class="name">{{ info }}</p>
+    </div>
+  </a>
+} @else if (url == "") {
+  <div class="info-container">
+    <div class="icon">
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+      >
+        <path [attr.d]="icon" />
+      </svg>
+    </div>
+    <div>
+      <p class="socialmedia">{{ socialmedia }}</p>
+      <p class="name">{{ info }}</p>
+    </div>
+  </div>
+} @else {
+  <a class="info-container" href="{{ url }}" target="_blank">
+    <div class="icon">
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+      >
+        <path [attr.d]="icon" />
+      </svg>
+    </div>
+    <div>
+      <p class="socialmedia">{{ socialmedia }}</p>
+      <p class="name">{{ info }}</p>
+    </div>
+  </a>
 }

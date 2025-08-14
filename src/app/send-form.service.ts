@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SendingService {
   sending = false;
 
-  getSending(){
+  getSending() {
     return this.sending;
   }
-  setSending(value: boolean){
+  setSending(value: boolean) {
     this.sending = value;
   }
 }

@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DeviceDetectorService {
-  constructor() { }
+  constructor() {}
 
   isMobile(): boolean {
     return window.innerWidth < 883;

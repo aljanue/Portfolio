@@ -1,9 +1,14 @@
-<h1 class="title-section">{{title}}</h1>
+<h1 class="title-section">{{ title }}</h1>
 <div class="sep"></div>
-<p>{{description}}</p>
-<h2 >What I'm Doing</h2>
+<p>{{ description }}</p>
+<h2>What I'm Doing</h2>
 <div class="card-container">
-@for(item of doing_cards; track item.id){
-    <app-about-card class="card" [description]="item.description" [img]="item.img" [title]="item.title"></app-about-card>
-}
+  @for (item of doing_cards; track item.id) {
+    <app-about-card
+      class="card"
+      [description]="item.description"
+      [img]="item.img"
+      [title]="item.title"
+    ></app-about-card>
+  }
 </div>

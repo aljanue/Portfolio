@@ -5,10 +5,10 @@ import { Input } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './about-card.component.html',
-  styleUrl: './about-card.component.css'
+  styleUrl: './about-card.component.css',
 })
 export class AboutCardComponent {
-  @Input() title="";
-  @Input() img="";
-  @Input() description="";
+  @Input() title = '';
+  @Input() img = '';
+  @Input() description = '';
 }

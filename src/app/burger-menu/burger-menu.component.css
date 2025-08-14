@@ -1,90 +1,112 @@
-
-.svg-container{
-    cursor: pointer;
-}.ham {
-    -webkit-tap-highlight-color: transparent;
-    transition: transform 400ms;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    float: right;
-    margin-right: 20px;
-  }
-  .hamRotate.active {
-    transform: rotate(45deg);
-  }
-  .line {
-    fill:none;
-    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-    stroke:var(--color-brown);
-    stroke-width:2.5;
-    stroke-linecap:round;
-  }
-  .ham8 .top {
-    stroke-dasharray: 40 160;
-  }
-  .ham8 .middle {
-    stroke-dasharray: 40 142;
-    transform-origin: 50%;
-    transition: transform 400ms;
-  }
-  .ham8 .bottom {
-    stroke-dasharray: 40 85;
-    transform-origin: 50%;
-    transition: transform 400ms, stroke-dashoffset 400ms;
-  }
-  .ham8.active .top {
-    stroke-dashoffset: -64px;
-  }
-  .ham8.active .middle {
-    transform: rotate(90deg);
-  }
-  .ham8.active .bottom {
-    stroke-dashoffset: -64px;
-  }
-
-
-  ul{
-    display: none;
-    position: relative;
-  }
-
-  .opened {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    animation: open 2s ease-out forwards;
-    padding: 20px;
-    background-color: var(--color-background-secondary);
-    box-shadow: -2px 2px 20px rgba(0, 0, 0, 0.4), -2px 2px 20px rgba(0, 0, 0, 0.4) inset ;
-    width: 100%;
-    max-height: 0;
-    overflow: hidden;
+.svg-container {
+  cursor: pointer;
 }
-.active{
-    color: var(--color-brown);
-    cursor: default;
-    font-weight: 400;
+.ham {
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 400ms;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  float: right;
+  margin-right: 20px;
+}
+.hamRotate.active {
+  transform: rotate(45deg);
+}
+.line {
+  fill: none;
+  transition:
+    stroke-dasharray 400ms,
+    stroke-dashoffset 400ms;
+  stroke: var(--color-brown);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+.ham8 .top {
+  stroke-dasharray: 40 160;
+}
+.ham8 .middle {
+  stroke-dasharray: 40 142;
+  transform-origin: 50%;
+  transition: transform 400ms;
+}
+.ham8 .bottom {
+  stroke-dasharray: 40 85;
+  transform-origin: 50%;
+  transition:
+    transform 400ms,
+    stroke-dashoffset 400ms;
+}
+.ham8.active .top {
+  stroke-dashoffset: -64px;
+}
+.ham8.active .middle {
+  transform: rotate(90deg);
+}
+.ham8.active .bottom {
+  stroke-dashoffset: -64px;
+}
+
+ul {
+  display: none;
+  position: relative;
+}
+
+.opened {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: open 2s ease-out forwards;
+  padding: 20px;
+  background-color: var(--color-background-secondary);
+  box-shadow:
+    -2px 2px 20px rgba(0, 0, 0, 0.4),
+    -2px 2px 20px rgba(0, 0, 0, 0.4) inset;
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+}
+.active {
+  color: var(--color-brown);
+  cursor: default;
+  font-weight: 400;
 }
 @keyframes open {
-    0% { max-height: 0; }
-    100% { max-height: 100vh; } 
+  0% {
+    max-height: 0;
+  }
+  100% {
+    max-height: 100vh;
+  }
 }
 .closed {
-    animation: close 2s ease-in forwards, fadeOut 2s forwards, hide 0s 2s forwards;
+  animation:
+    close 2s ease-in forwards,
+    fadeOut 2s forwards,
+    hide 0s 2s forwards;
 }
 
 @keyframes close {
-    0% { max-height: 100vh; } 
-    100% { max-height: 0; }
+  0% {
+    max-height: 100vh;
+  }
+  100% {
+    max-height: 0;
+  }
 }
 
 @keyframes fadeOut {
-    0% { opacity: 1; }
-    100% { opacity: 0; }
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 @keyframes hide {
-    to {display: none;}
+  to {
+    display: none;
+  }
 }

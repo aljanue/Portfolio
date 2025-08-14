@@ -1,20 +1,34 @@
-<h1 class="title-section">{{title}}</h1>
+<h1 class="title-section">{{ title }}</h1>
 <div class="sep"></div>
 <div class="projects-tag mb-5">
-<ul>
-    <li [class.active]="selectedCategory === 'All'" (click)="filterByCategory('All')">All</li>
-    @for(category of projects; track category.category){
-        <li [class.active]="selectedCategory === category.category" (click)="filterByCategory(category.category)">{{category.category}}</li>
+  <ul>
+    <li
+      [class.active]="selectedCategory === 'All'"
+      (click)="filterByCategory('All')"
+    >
+      All
+    </li>
+    @for (category of projects; track category.category) {
+      <li
+        [class.active]="selectedCategory === category.category"
+        (click)="filterByCategory(category.category)"
+      >
+        {{ category.category }}
+      </li>
     }
-</ul>
+  </ul>
 </div>
 <div class="projects-container">
-    @for(category of projects; track category.category){
-        @if(selectedCategory === 'All' || selectedCategory === category.category) {
-        @for(projects of category.projects; track projects.title){
-            <app-project [title]="projects.title" [url]="projects.url" [img]="projects.img" [tags]="projects.tags"></app-project>
-        }
+  @for (category of projects; track category.category) {
+    @if (selectedCategory === "All" || selectedCategory === category.category) {
+      @for (projects of category.projects; track projects.title) {
+        <app-project
+          [title]="projects.title"
+          [url]="projects.url"
+          [img]="projects.img"
+          [tags]="projects.tags"
+        ></app-project>
+      }
     }
-    }
-    
+  }
 </div>

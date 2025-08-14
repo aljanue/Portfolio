@@ -1,46 +1,46 @@
-.projects-container{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+.projects-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 .projects-tag ul {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    padding: 0 20px;
-    text-transform: uppercase;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 20px;
+  text-transform: uppercase;
 }
-.projects-tag ul li{
-    cursor: pointer;
+.projects-tag ul li {
+  cursor: pointer;
 }
 .active {
-    color: var(--color-brown);
-    font-weight: 500;
+  color: var(--color-brown);
+  font-weight: 500;
 }
-.active::after{
-    content: '';
-    display: block;
-    width: 15px;
-    height: 4px;
-    background-color: var(--color-brown);
-    margin-top: 5px;
-    animation: complete_selected .5s ease forwards;
+.active::after {
+  content: "";
+  display: block;
+  width: 15px;
+  height: 4px;
+  background-color: var(--color-brown);
+  margin-top: 5px;
+  animation: complete_selected 0.5s ease forwards;
 }
 @keyframes complete_selected {
-    0%{
-        width: 0;
-    }
-    100%{
-        width: 15px;
-    }
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 15px;
+  }
 }
 
-@media(max-width: 400px){
-    .projects-tag ul li{
-        font-size: 0.8rem;
-    }
-    .projects-tag ul{
-        padding: 0 5px;
-    }
+@media (max-width: 400px) {
+  .projects-tag ul li {
+    font-size: 0.8rem;
+  }
+  .projects-tag ul {
+    padding: 0 5px;
+  }
 }

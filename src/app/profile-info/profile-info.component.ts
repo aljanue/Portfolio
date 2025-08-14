@@ -5,11 +5,11 @@ import { Component, Input } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './profile-info.component.html',
-  styleUrl: './profile-info.component.css'
+  styleUrl: './profile-info.component.css',
 })
 export class ProfileInfoComponent {
-@Input() info = "";
-@Input() icon = "";
-@Input() socialmedia = "";
-@Input() url="";
+  @Input() info = '';
+  @Input() icon = '';
+  @Input() socialmedia = '';
+  @Input() url = '';
 }

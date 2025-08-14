@@ -5,11 +5,11 @@ import { Component, Input } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './project.component.html',
-  styleUrl: './project.component.css'
+  styleUrl: './project.component.css',
 })
 export class ProjectComponent {
-@Input() title="";
-@Input() img="";
-@Input() tags: string[] = [];
-@Input() url="";
+  @Input() title = '';
+  @Input() img = '';
+  @Input() tags: string[] = [];
+  @Input() url = '';
 }
