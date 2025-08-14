@@ -11,7 +11,7 @@ import { AboutCardComponent } from '../about-card/about-card.component';
 export class AboutComponent {
   title = 'About Me';
   description =
-    "Hi, I'm Alberto Játiva and I'm a final year student of Multimedia Engineering, the perfect combination between creative and technical. I love web development and, someday, I would like to be a nice full-stack developer. I have worked on my own projects to learn that you can check in the 'Portfolio' section, as well as university work. I know frameworks like Angular or Django and languages like HTML, CSS, JavaScript, JAVA, Python... I think that a good design is what makes the difference because it's the only thing the user sees, but I also like the challenges of being a back-end developer. In my free time I like to do all kinds of sports and keep learning new technologies that I don't know yet.";
+    "Engineer and software developer with one year of experience in the sector for B2C and B2B products. Used to work with agile methodologies such as SCRUM or Kanban. Working on my own projects to keep improving and learning about the most cutting-edge frameworks in the market such as Angular or React.";
   doing_cards = [
     {
       id: 1,
