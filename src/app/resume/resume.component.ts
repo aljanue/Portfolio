@@ -244,6 +244,14 @@ export class ResumeComponent {
 
   certifications = [
     {
+      title: 'Web Components Course with LitElement',
+      description: 'Certified by: OpenWebinars. Learn about Web Components and LitElement.',
+    },
+    {
+      title: 'Kubernetes for Beginners',
+      description: 'Certified by: OpenWebinars. Learn the basics of Kubernetes.',
+    },
+    {
       title: 'Project Management and Agile Methodology Fundamentals',
       description:
         'Certified by: Santander. Learn about project management and the Agile methodology to apply it to your work environment.',
