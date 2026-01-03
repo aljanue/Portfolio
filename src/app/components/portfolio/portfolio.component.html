@@ -8,24 +8,24 @@
     >
       All
     </li>
-    @for (category of projects; track category.category) {
+    @for (category of categories; track category.name) {
       <li
-        [class.active]="selectedCategory === category.category"
-        (click)="filterByCategory(category.category)"
+        [class.active]="selectedCategory === category.name"
+        (click)="filterByCategory(category.name)"
       >
-        {{ category.category }}
+        {{ category.name }}
       </li>
     }
   </ul>
 </div>
 <div class="projects-container">
-  @for (category of projects; track category.category) {
-    @if (selectedCategory === "All" || selectedCategory === category.category) {
+  @for (category of categories; track category.name) {
+    @if (selectedCategory === "All" || selectedCategory === category.name) {
       @for (projects of category.projects; track projects.title) {
         <app-project
           [title]="projects.title"
           [url]="projects.url"
-          [img]="projects.img"
+          [img]="projects.portrait"
           [tags]="projects.tags"
         ></app-project>
       }

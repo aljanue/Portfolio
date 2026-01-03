@@ -1,0 +1,87 @@
+[
+  {
+    "name": "Front-End",
+    "projects": [
+      {
+        "id": 1,
+        "title": "Quiz Tour c de c",
+        "portrait": "assets/img/cdec.png",
+        "tags": ["HTML", "CSS", "JS"],
+        "url": "https://tourcdec.netlify.app"
+      },
+      {
+        "id": 2,
+        "title": "CatChef",
+        "portrait": "assets/img/catchef.png",
+        "tags": ["HTML", "CSS", "JS"],
+        "url": "https://mural.uv.es/aljanue/CatChef/index.html"
+      },
+      {
+        "id": 3,
+        "title": "Nocuk",
+        "portrait": "assets/img/nocuk.png",
+        "tags": ["Angular", "Tailwind"],
+        "url": "https://aljanue.github.io/html/nocuk.html"
+      },
+      {
+        "id": 4,
+        "title": "Espe's Portfolio",
+        "portrait": "assets/img/espe.png",
+        "tags": ["HTML", "CSS", "JS"],
+        "url": "https://espemoragues.github.io/"
+      },
+      {
+        "id": 5,
+        "title": "Old Portfolio",
+        "portrait": "assets/img/oldportfolio.png",
+        "tags": ["HTML", "CSS", "JS"],
+        "url": "https://aljanue.github.io/"
+      }
+    ]
+  },
+  {
+    "name": "Full-Stack",
+    "projects": [
+      {
+        "id": 6,
+        "title": "Snakers",
+        "portrait": "assets/img/snakers.png",
+        "tags": ["HTML", "CSS", "JS", "Java Servlet + JSP", "SQL", "PHP"],
+        "url": "https://aljanue.github.io/html/snakers.html"
+      }
+    ]
+  },
+  {
+    "name": "Addons",
+    "projects": [
+      {
+        "id": 7,
+        "title": "Lighting",
+        "portrait": "assets/img/lighting.png",
+        "tags": ["Blender", "Python"],
+        "url": "https://github.com/aljanue/3-points-lighting"
+      },
+      {
+        "id": 8,
+        "title": "Procedural City",
+        "portrait": "assets/img/city.png",
+        "tags": ["Blender", "Python"],
+        "url": "https://github.com/aljanue/Procedural-City-Blender-Addon"
+      },
+      {
+        "id": 9,
+        "title": "CSV - BVH Converter",
+        "portrait": "assets/img/converter.png",
+        "tags": ["Blender", "Python"],
+        "url": "https://github.com/aljanue/CsvToBvh-Converter"
+      },
+      {
+        "id": 10,
+        "title": "Curve Filter",
+        "portrait": "assets/img/curves.png",
+        "tags": ["Blender", "Python"],
+        "url": "https://github.com/aljanue/MOCAP-Filter"
+      }
+    ]
+  }
+]
