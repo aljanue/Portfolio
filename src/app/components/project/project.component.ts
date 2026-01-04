@@ -9,18 +9,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./project.component.css'],
 })
 export class ProjectComponent {
-  // accept the whole project object (preferred) or individual fields
   @Input() project: any;
   @Input() title = '';
   @Input() img = '';
   @Input() tags: string[] = [];
-  @Input() url = '';
+  @Input() link = '';
 
   constructor(private router: Router) {}
 
   openProject() {
-    const proj = this.project ?? { id: undefined, title: this.title, img: this.img, tags: this.tags, url: this.url };
-    const id = proj?.id ?? proj?.title; // fallback if no id
+    const proj = this.project ?? { id: undefined, title: this.title, img: this.img, tags: this.tags, link: this.link };
+    const id = proj?.id ?? proj?.title;
     this.router.navigate(['/project', id], { state: { project: proj } });
   }
 }

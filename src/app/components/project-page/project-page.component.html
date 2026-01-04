@@ -7,16 +7,78 @@
             }
         </div>
     </div>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates soluta nobis voluptatibus animi eveniet dolorum blanditiis reprehenderit recusandae fugit non, molestias quae ab nulla deleniti accusantium ea illum at exercitationem.
-Quidem quam, rerum voluptate eum fuga quas, voluptates reiciendis earum exercitationem nesciunt quaerat fugiat dolores suscipit perferendis obcaecati ut perspiciatis dolorem esse ea deserunt qui omnis et assumenda! Exercitationem, quam.
-Laudantium, excepturi! Est exercitationem ipsum ratione placeat voluptas adipisci quidem, saepe ea molestiae eveniet unde repellat? Error, nihil necessitatibus, pariatur eveniet unde harum sit praesentium, quis laborum eum excepturi reiciendis?
-Recusandae voluptatum nam sapiente ipsa dolorem ratione officiis ab repudiandae ducimus laborum expedita doloremque cupiditate tempore eligendi quibusdam accusamus tempora ut, magnam, fugit repellendus nisi numquam. Nemo explicabo praesentium distinctio.
-Ipsam facilis quis reprehenderit? Magni consequatur asperiores quas quibusdam ad illum recusandae veniam cum laudantium sunt? Voluptatibus error cum aut asperiores cupiditate expedita assumenda libero. Consequatur adipisci illum facere dolores!
-Nisi aspernatur iusto et officiis sapiente id eum tempore aliquam, magnam consectetur? Enim error ducimus aspernatur aut dolores ut totam. Aliquam ipsa natus soluta ex esse ullam earum tempora eius?
-Et animi hic dolores adipisci, fugit recusandae iure autem ducimus dicta voluptatibus explicabo, nobis repellat, id facilis laudantium soluta ipsum aliquid reprehenderit atque quae saepe asperiores. Ut sint architecto asperiores?
-Animi, nisi. At aliquam laudantium ipsam vel adipisci rem quos repudiandae quasi ea. Quae, rerum. Natus ratione ipsum quas, ducimus reprehenderit iure repellat distinctio voluptate numquam error odit, adipisci dolor.
-Corporis porro consequatur voluptatem expedita dolores amet perferendis, qui sunt minima eveniet mollitia hic distinctio? Temporibus enim repellat ex, amet minus saepe eum blanditiis eveniet perspiciatis asperiores voluptatem mollitia quibusdam!
-Incidunt itaque suscipit perspiciatis excepturi nesciunt voluptatem rem quia, quos qui cum error, cumque eius enim sit eos fuga voluptates velit? Voluptatum ullam aspernatur placeat nostrum similique, qui architecto officia.</p>
+    @if(!hasContent()) {
+            <div class="no-content-message">
+                <p>No content available for this project.</p>
+            </div>
+        }
+    @else {
+    <div class="project-content">
+        @if(data?.videos && data?.videos!.length > 0) {
+            <!-- show first video -->
+            <div class="content-row video-row">
+                <div class="content-video">
+                    <video controls [src]="data?.videos![0]"></video>
+                </div>
+            </div>
+        }
+        @for(item of getContentItems(); let i = $index; track i) {
+            @if(item.type === 'description') {
+                <div class="content-row description-row">
+                    <div class="content-text">
+                        <p>{{ item.content }}</p>
+                    </div>
+                </div>
+            }
+            @if(item.type === 'images-row') {
+                <div class="content-row images-row">
+                    @for(image of item.content; track image) {
+                        <div class="content-image">
+                            <img [src]="image" [alt]="data?.title" />
+                        </div>
+                    }
+                </div>
+            }  
+        }
+        @if(data?.videos && data?.videos!.length > 1) {
+                <!-- show other videos -->
+                 @for(video of data?.videos!.slice(1); track video) {
+                    <div class="content-row video-row">
+                        <div class="content-video">
+                            <video controls [src]="video"></video>
+                        </div>
+                    </div>
+                 }
+            }
+            @if(data?.link) {
+                <div class="content-row link-row">
+                    <div class="content-text">
+                        <p>Check out the project here: <a [href]="data?.link" target="_blank" rel="noopener">{{ data?.link }}</a></p>
+                    </div>
+                </div>
+            }
+    </div>
+
+    }
+
+    <!-- Related Projects Section -->
+    @if(relatedProjects.length > 0) {
+        <div class="related-projects-section">
+            <h3 class="related-projects-title">Related projects</h3>
+            <div class="related-projects-container">
+                @for(project of relatedProjects; track project.id) {
+                    <app-project
+                        [project]="project"
+                        [title]="project.title"
+                        [img]="project.portrait"
+                        [tags]="project.tags"
+                        [link]="project.link"
+                    ></app-project>
+                }
+            </div>
+        </div>
+    }
 </div>
+
 
 

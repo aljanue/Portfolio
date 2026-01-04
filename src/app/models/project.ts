@@ -8,7 +8,10 @@ export class ProjectModel {
   title = '';
   portrait = '';
   tags: string[] = [];
-  url = '';
+  link = '';
+  descriptions: string[] = [];
+  videos: string[] = [];
+  images: string[] = [];
 
   constructor(init?: Partial<ProjectModel>) {
     if (init) {
