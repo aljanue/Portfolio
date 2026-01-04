@@ -1,34 +1,42 @@
-<h1 class="title-section">{{ title }}</h1>
-<div class="sep"></div>
-<div class="projects-tag mb-5">
-  <ul>
-    <li
-      [class.active]="selectedCategory === 'All'"
-      (click)="filterByCategory('All')"
-    >
-      All
-    </li>
-    @for (category of categories; track category.name) {
+<h1 class="title-section" [class.animated]="isAnimated">{{ title }}</h1>
+<div class="sep" [class.animated]="isAnimated"></div>
+
+@if (selectedProject) {
+  <app-project-page [data]="selectedProject" (back)="backToPortfolio()"></app-project-page>
+} @else {
+  <div class="projects-tag mb-5">
+    <ul>
       <li
-        [class.active]="selectedCategory === category.name"
-        (click)="filterByCategory(category.name)"
+        [class.active]="selectedCategory === 'All'"
+        (click)="filterByCategory('All')"
       >
-        {{ category.name }}
+        All
       </li>
-    }
-  </ul>
-</div>
-<div class="projects-container">
-  @for (category of categories; track category.name) {
-    @if (selectedCategory === "All" || selectedCategory === category.name) {
-      @for (projects of category.projects; track projects.title) {
-        <app-project
-          [title]="projects.title"
-          [url]="projects.url"
-          [img]="projects.portrait"
-          [tags]="projects.tags"
-        ></app-project>
+      @for (category of categories; track category.name) {
+        <li
+          [class.active]="selectedCategory === category.name"
+          (click)="filterByCategory(category.name)"
+        >
+          {{ category.name }}
+        </li>
+      }
+    </ul>   
+  </div>
+  <div class="projects-container">
+    @for (category of categories; track category.name) {
+      @if (selectedCategory === "All" || selectedCategory === category.name) {
+        @for (projects of category.projects; track projects.title) {
+          <app-project
+            [title]="projects.title"
+            [url]="projects.url"
+            [img]="projects.portrait"
+            [tags]="projects.tags"
+            [project]="projects"
+            (click)="selectProject(projects.id?.toString() || projects.title)"
+            style="cursor: pointer;"
+          ></app-project>
+        }
       }
     }
-  }
-</div>
+  </div>
+}

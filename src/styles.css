@@ -52,6 +52,10 @@ body::-webkit-scrollbar-thumb:hover {
   margin: 15px 0px;
   animation: width-open 1s forwards ease;
 }
+
+.sep.animated {
+  animation: none;
+}
 @keyframes width-open {
   0% {
     width: 0px;
@@ -69,6 +73,10 @@ app-resume .title-section,
 app-portfolio .title-section,
 app-contact .title-section {
   animation: fade-open 2s forwards ease;
+}
+
+app-portfolio .title-section.animated {
+  animation: none;
 }
 app-about > *:not(.title-section):not(.sep),
 app-resume > *:not(.title-section):not(.sep),
