@@ -8,6 +8,9 @@
   --color-brown: #e6be63;
   --color-text-secondary: #888;
 }
+body {
+    background-color: #111;
+}
 app-root {
   background-color: #111;
   display: flex;
