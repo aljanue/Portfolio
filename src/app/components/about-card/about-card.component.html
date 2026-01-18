@@ -8,7 +8,10 @@
     <path [attr.d]="img" />
   </svg>
 }
-<div>
-  <h3>{{ title }}</h3>
-  <p>{{ description }}</p>
+<div class="card-content">
+  <div class="text">
+    <h3>{{ title }}</h3>
+    <p>@if(entity) {<span class="entity">Certified by {{ entity }}. </span>}{{ description }}</p>
+  </div>
+  @if(date) {<span class="date">{{ formatDate(date) }}</span>}
 </div>

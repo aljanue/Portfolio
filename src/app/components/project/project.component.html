@@ -1,7 +1,7 @@
-<div class="img-container" (click)="openProject()" role="button" tabindex="0">
-  <img [src]="project?.img ?? img" [alt]="project?.title ?? title" />
+<div class="img-container" role="button" tabindex="0">
+  <img [src]="project.portrait" [alt]="project.title" />
   <div class="hover flex items-center justify-center">
-    <a href="{{ project?.link ?? link }}" target="_blank" (click)="$event.stopPropagation()">
+    <a>
       <svg
         width="60"
         height="60"
@@ -17,10 +17,10 @@
     </a>
   </div>
 </div>
-<div class="px-6 pb-4" (click)="openProject()" role="button" tabindex="0">
-  <h1>{{ project?.title ?? title }}</h1>
+<div class="px-6 pb-4" role="button" tabindex="0">
+  <h1>{{ project.title }}</h1>
   <div class="flex gap-3 flex-wrap">
-    @for (tag of (project?.tags ?? tags); track tag) {
+    @for (tag of (project.tags); track tag) {
       <span class="tag">{{ tag }}</span>
     }
   </div>

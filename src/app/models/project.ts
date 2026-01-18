@@ -1,26 +1,18 @@
-export interface CategoryModel {
-    name: string;
-    projects: ProjectModel[];
-}
-
-export class ProjectModel {
+export interface ProjectModel {
   id?: number;
-  title = '';
-  portrait = '';
-  tags: string[] = [];
-  link = '';
-  descriptions: string[] = [];
-  videos: string[] = [];
-  images: string[] = [];
-
-  constructor(init?: Partial<ProjectModel>) {
-    if (init) {
-      Object.assign(this, init);
-    }
-  }
+  title: string;
+  portrait: string;
+  tags: string[];
+  projectLink: string;
+  repoLink: string;
+  descriptions: string[];
+  videos: string[];
+  images: string[];
+  category: string;
+  relatedProjects?: ProjectModel[];
 }
 
 export interface CategoryModel {
-  category: string;
+  name: string;
   projects: ProjectModel[];
 }

@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { Router } from '@angular/router';
-import { DeviceDetectorService } from './device-detector.service';
+import { DeviceDetectorService } from './services/device-detector.service';
 
 @Component({
   selector: 'app-root',

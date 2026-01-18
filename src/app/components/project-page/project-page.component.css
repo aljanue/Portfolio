@@ -17,16 +17,73 @@
 h2 {
   font-size: 1.3rem;
   font-weight: 750;
+  transition: margin-left 0.3s ease;
+}
+
+.project-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    fill: white;
+    flex: 1;
 }
 
 .back-button {
-    display: flex;
+    cursor: pointer;
+    position: relative;
+    display: inline-flex;
     align-items: center;
     color: #999;
-    gap: 5px;
+    gap: 8px;
     font-size: 1.1rem;
+    transition: all 0.3s ease;
 }
 
+.back-button:hover {
+    gap: 20px;
+}
+
+.back-button:hover ~ h2 {
+    margin-left: 120px;
+    transition: margin-left 0.3s ease;
+}
+
+.back-arrow {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    min-height: 24px;
+    fill: white;
+    flex-shrink: 0;
+}
+
+.back-text {
+    position: absolute;
+    left: 32px;
+    white-space: nowrap;
+    opacity: 0;
+    margin: 0;
+    font-size: 0.9rem;
+    color: #ccc;
+    animation: none;
+    transition: none;
+}
+
+.back-button:hover .back-text {
+    opacity: 1;
+    animation: slide-in-text 0.5s ease forwards;
+}
+
+@keyframes slide-in-text {
+    from {
+        transform: translateX(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
 .back-button-text {
     display: none;
 }
@@ -129,6 +186,7 @@ h2 {
     font-size: 1rem;
     line-height: 1.6;
     color: #ddd;
+    width: 100%;
     padding: 20px;
     border-left: 3px solid var(--color-brown);
     background-color: rgba(230, 190, 99, 0.05);
@@ -136,10 +194,17 @@ h2 {
     transition: all 0.3s ease;
 }
 
+.content-text p a {
+    color: rgb(174, 174, 174);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+.content-text p a:hover {
+    color: var(--color-brown);
+}
+
 .content-text p:hover {
     background-color: rgba(230, 190, 99, 0.1);
-    border-left-width: 4px;
-    padding-left: 19px;
 }
 
 .image-row {
@@ -160,7 +225,7 @@ h2 {
 .content-image {
     flex: 1;
     width: 100%;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 16 / 9;
     overflow: hidden;
     border-radius: 16px;
     position: relative;

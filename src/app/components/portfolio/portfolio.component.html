@@ -12,7 +12,7 @@
       >
         All
       </li>
-      @for (category of categories; track category.name) {
+      @for (category of categoriesWithProjects; track category.name) {
         <li
           [class.active]="selectedCategory === category.name"
           (click)="filterByCategory(category.name)"
@@ -23,16 +23,12 @@
     </ul>   
   </div>
   <div class="projects-container">
-    @for (category of categories; track category.name) {
+    @for (category of categoriesWithProjects; track category.name) {
       @if (selectedCategory === "All" || selectedCategory === category.name) {
-        @for (projects of category.projects; track projects.title) {
+        @for (project of category.projects; track project.title) {
           <app-project
-            [title]="projects.title"
-            [link]="projects.link"
-            [img]="projects.portrait"
-            [tags]="projects.tags"
-            [project]="projects"
-            (click)="selectProject(projects.id?.toString() || projects.title)"
+            [project]="project"
+            (click)="selectProject(project)"
             style="cursor: pointer;"
           ></app-project>
         }

@@ -1,6 +1,13 @@
 import { Component } from '@angular/core';
 import { TimelineSectionComponent } from '../timeline-section/timeline-section.component';
 import { AboutCardComponent } from '../about-card/about-card.component';
+import { Education } from '../../models/education';
+import { Experience } from '../../models/experience';
+import { ContentfulService } from '../../services/contentful.service';
+import { forkJoin } from 'rxjs';
+import { Skill } from '../../models/skill';
+import { Honour } from '../../models/honour';
+import { Certification } from '../../models/certification';
 
 @Component({
   selector: 'app-resume',
@@ -13,311 +20,164 @@ export class ResumeComponent {
   title = 'Resume';
   selectedCategory = 'All';
 
-  sections = [
-    {
-      title: 'Education',
-      img: 'M22 9.74l-2 1.02v7.24c-1.007 2.041-5.606 3-8.5 3-3.175 0-7.389-.994-8.5-3v-7.796l-3-1.896 12-5.308 11 6.231v8.769l1 3h-3l1-3v-8.26zm-18 1.095v6.873c.958 1.28 4.217 2.292 7.5 2.292 2.894 0 6.589-.959 7.5-2.269v-6.462l-7.923 4.039-7.077-4.473zm-1.881-2.371l9.011 5.694 9.759-4.974-8.944-5.066-9.826 4.346z',
-      subsections: [
-        {
-          title: 'Multimedia Engineering Degree',
-          date: '2022 - NOW',
-          place: 'University of Valencia (SPAIN)',
-        },
-        {
-          title: 'Telecommunications Electronics Engineering Degree',
-          date: '2019 - 2022',
-          place: 'University of Valencia (SPAIN)',
-        },
-        {
-          title: 'High School Degree',
-          date: '2017 - 2019',
-          place: 'Colegio Salesianas - María Auxiliadora, Valencia (SPAIN)',
-        },
-      ],
-    },
-    {
-      title: 'Experience',
-      img: 'M11 6.999c2.395.731 4.27 2.607 4.999 5.001.733-2.395 2.608-4.269 5.001-5-2.393-.731-4.268-2.605-5.001-5-.729 2.394-2.604 4.268-4.999 4.999zm7 7c1.437.438 2.562 1.564 2.999 3.001.44-1.437 1.565-2.562 3.001-3-1.436-.439-2.561-1.563-3.001-3-.437 1.436-1.562 2.561-2.999 2.999zm-6 5.501c1.198.365 2.135 1.303 2.499 2.5.366-1.198 1.304-2.135 2.501-2.5-1.197-.366-2.134-1.302-2.501-2.5-.364 1.197-1.301 2.134-2.499 2.5zm-6.001-12.5c-.875 2.873-3.128 5.125-5.999 6.001 2.876.88 5.124 3.128 6.004 6.004.875-2.874 3.128-5.124 5.996-6.004-2.868-.874-5.121-3.127-6.001-6.001z',
-      subsections: [
-        {
-          title: 'Software Engineer',
-          date: 'August 2025 - Now',
-          place: 'Axebow by Kumori',
-        },
-        {
-          title: 'Frontend Developer',
-          date: 'July 2024 - July 2025',
-          place: 'Dots. Memories',
-        },
-      ],
-    },
-  ];
-  skills = [
-    {
-      tag: 'front',
-      skills: [
-        {
-          name: 'Angular',
-          img: '',
-          percentage: 60,
-        },
-        {
-          name: 'HTML',
-          img: '',
-          percentage: 100,
-        },
-        {
-          name: 'CSS',
-          img: '',
-          percentage: 80,
-        },
-        {
-          name: 'JavaScript',
-          img: '',
-          percentage: 70,
-        },
-        {
-          name: 'Typescript',
-          img: '',
-          percentage: 70,
-        },
-        {
-          name: 'Lit',
-          img: '',
-          percentage: 60,
-        },
-        {
-          name: 'Flutter',
-          img: '',
-          percentage: 80,
-        },
-        {
-          name: 'Kotlin',
-          img: '',
-          percentage: 50,
-        },
-      ],
-    },
-    {
-      tag: 'back',
-      skills: [
-        {
-          name: 'Golang',
-          img: '',
-          percentage: 50,
-        },
-        {
-          name: 'Strapi',
-          img: '',
-          percentage: 33,
-        },
-        {
-          name: 'Django',
-          img: '',
-          percentage: 80,
-        },
-        {
-          name: 'Springboot',
-          img: '',
-          percentage: 25,
-        },
-        {
-          name: 'Python',
-          img: '',
-          percentage: 55,
-        },
-        {
-          name: 'JAVA',
-          img: '',
-          percentage: 65,
-        },
-        {
-          name: 'SQL',
-          img: '',
-          percentage: 90,
-        },
-        {
-          name: 'PHP',
-          img: '',
-          percentage: 45,
-        },
-      ],
-    },
-    {
-      tag: 'design',
-      skills: [
-        {
-          name: 'Figma',
-          img: '',
-          percentage: 80,
-        },
-        {
-          name: 'Blender',
-          img: '',
-          percentage: 60,
-        },
-        {
-          name: 'Photoshop',
-          img: '',
-          percentage: 65,
-        },
-        {
-          name: 'Illustrator',
-          img: '',
-          percentage: 54,
-        },
-        {
-          name: 'Lightroom',
-          img: '',
-          percentage: 85,
-        },
-        {
-          name: 'Premiere',
-          img: '',
-          percentage: 70,
-        },
-      ],
-    },
-    {
-      tag: 'others',
-      skills: [
-        {
-          name: 'Git',
-          img: '',
-          percentage: 95,
-        },
-        {
-          name: 'Docker',
-          img: '',
-          percentage: 55,
-        },
-        {
-          name: 'Kubernetes',
-          img: '',
-          percentage: 25,
-        },
-        {
-          name: 'Unity',
-          img: '',
-          percentage: 80,
-        },
-        {
-          name: 'C#',
-          img: '',
-          percentage: 70,
-        },
-        {
-          name: 'C++',
-          img: '',
-          percentage: 75,
-        },
-      ],
-    },
-  ];
+  education: Education = {
+    title: 'Education',
+    img: 'M22 9.74l-2 1.02v7.24c-1.007 2.041-5.606 3-8.5 3-3.175 0-7.389-.994-8.5-3v-7.796l-3-1.896 12-5.308 11 6.231v8.769l1 3h-3l1-3v-8.26zm-18 1.095v6.873c.958 1.28 4.217 2.292 7.5 2.292 2.894 0 6.589-.959 7.5-2.269v-6.462l-7.923 4.039-7.077-4.473zm-1.881-2.371l9.011 5.694 9.759-4.974-8.944-5.066-9.826 4.346z',
+    educations: []
+  };
+  experience: Experience = {
+    title: 'Experience',
+    img: 'M11 6.999c2.395.731 4.27 2.607 4.999 5.001.733-2.395 2.608-4.269 5.001-5-2.393-.731-4.268-2.605-5.001-5-.729 2.394-2.604 4.268-4.999 4.999zm7 7c1.437.438 2.562 1.564 2.999 3.001.44-1.437 1.565-2.562 3.001-3-1.436-.439-2.561-1.563-3.001-3-.437 1.436-1.562 2.561-2.999 2.999zm-6 5.501c1.198.365 2.135 1.303 2.499 2.5.366-1.198 1.304-2.135 2.501-2.5-1.197-.366-2.134-1.302-2.501-2.5-.364 1.197-1.301 2.134-2.499 2.5zm-6.001-12.5c-.875 2.873-3.128 5.125-5.999 6.001 2.876.88 5.124 3.128 6.004 6.004.875-2.874 3.128-5.124 5.996-6.004-2.868-.874-5.121-3.127-6.001-6.001z',
+    experiences: []
+  };
 
-  honours = [
-    {
-      title: 'Web Application Development',
-      description:
-        'HTML, CSS, JS, JSP/JavaServlet & PHP. Model, View, Controller (MVC).',
-    },
-    {
-      title: 'Front-End Development',
-      description: 'HTML, CSS, JS. Three.js, D3.js, Canvas...',
-    },
-    {
-      title: 'Databases and Storage Systems',
-      description:
-        'Relational Model, Entity-Relationship Model, SQL Queries...',
-    },
-    {
-      title: 'Animation',
-      description:
-        'Development of Python Addons for Blender, Modeling, Rigging...',
-    },
-    { title: 'Computer Graphics', description: 'Unity. Shaders, Lighting...' },
-    {
-      title: 'Structure of Computers',
-      description: 'Memory, Input / Output, Peripherals, Buses...',
-    },
-  ];
+  skills: Skill[] = [];
+  tags: string[] = [];
+  groupedSkills: { tag: string; skills: Skill[] }[] = [];
 
-  certifications = [
-    {
-      title: 'Web Components Course with LitElement',
-      description: 'Certified by: OpenWebinars. Learn about Web Components and LitElement.',
-    },
-    {
-      title: 'Kubernetes for Beginners',
-      description: 'Certified by: OpenWebinars. Learn the basics of Kubernetes.',
-    },
-    {
-      title: 'Project Management and Agile Methodology Fundamentals',
-      description:
-        'Certified by: Santander. Learn about project management and the Agile methodology to apply it to your work environment.',
-    },
-    {
-      title: 'Design Thinking and Innovation',
-      description: 'Certified by: Capgemini. User interfaces and usability.',
-    },
-    {
-      title: 'Testing and Continuous Integration',
-      description: 'Certified by: Capgemini. White box testing in Java.',
-    },
-    {
-      title: 'Red Hat System Administration I',
-      description:
-        'Certified by: RedHat Academy. Administration and management of Linux systems.',
-    },
-    {
-      title: 'CCNAv7: Introduction to Networks',
-      description:
-        'Certified by: Cisco Networking Academy. Network configuration and use of TCP/IP protocols.',
-    },
-    {
-      title: 'Introduction to Artificial Intelligence',
-      description:
-        'Certified by: Amazon Web Services (AWS). Machine Language, Artificial Intelligence and Deep Learning.',
-    },
-    {
-      title: 'Mobile Apps Development',
-      description:
-        'Certified by: Google. Skills and concepts for creating applications for mobile devices.',
-    },
-    {
-      title: 'Fundamentals of Digital Marketing',
-      description:
-        'Certified by: Google. Learn the basics of digital marketing and boost your business or career.',
-    },
-    {
-      title: 'Effective Communication',
-      description:
-        'Certified by: Santander. Learn the keys to effective communication and apply them in your day-to-day work.',
-    },
-    {
-      title: 'Leadership',
-      description:
-        'Certified by: Santander. Explore the key skills, strategies and mindsets needed to excel in leadership roles.',
-    },
-  ];
+  honours: Honour[] = [];
+
+  certifications: Certification[] = [];
+
+  constructor(private contentfulService: ContentfulService) {}
 
   ngOnInit() {
-    this.skills.forEach((skillCategory) => {
-      skillCategory.skills.forEach((skill) => {
-        const desiredPercentage = skill.percentage;
-        skill.percentage = 0;
+    this.loadData();
+  }
 
-        setTimeout(() => {
-          skill.percentage = desiredPercentage;
-        }, 100);
-      });
+  private loadData() {
+    forkJoin({
+      education: this.contentfulService.getEducation(),
+      experience: this.contentfulService.getExperience(),
+      skills: this.contentfulService.getSkills(),
+      honours: this.contentfulService.getHonours(),
+      certifications: this.contentfulService.getCertifications()
+    }).subscribe(({ education, experience, skills, honours, certifications }) => {
+      this.loadEducationData(education);
+      this.loadExperienceData(experience);
+
+      this.loadSkillsData(skills);
+      this.loadSkillTags();
+      this.groupSkillsByTag();
+
+      this.loadHonoursData(honours);
+
+      this.loadCertificationsData(certifications)
     });
   }
+
+  private loadEducationData(educationData: any) {
+    educationData.map((edu: any) => {
+        this.education.educations.push({
+          degree: edu.fields.degree,
+          school: edu.fields.school,
+          initDate: new Date(edu.fields.initDate),
+          endDate: edu.fields.endDate ? new Date(edu.fields.endDate) : undefined,
+          country: edu.fields.country,
+        });
+    });
+
+    this.sortByEndDate(this.education.educations);
+  }
+
+  private loadExperienceData(experienceData: any) {
+    experienceData.map((exp: any) => {
+        this.experience.experiences.push({
+          role: exp.fields.role,
+          company: exp.fields.company,
+          initDate: new Date(exp.fields.initDate),
+          endDate: exp.fields.endDate ? new Date(exp.fields.endDate) : undefined,
+          description: exp.fields.description,
+        });
+    });
+    this.sortByEndDate(this.experience.experiences);
+  }
+
+  private loadSkillsData(skillsData: any) {
+    skillsData.map((skill: any) => {
+      this.skills.push({
+        name: skill.fields.name,
+        percentage: skill.fields.percentage,
+        tag: skill.fields.category,
+      })
+    });
+  }
+
+  private loadHonoursData(honoursData: any) {
+    honoursData.map((honour: any) => {
+      console.log(honour);
+      this.honours.push({
+        title: honour.fields.subject,
+        description: honour.fields.description,
+      })
+    })
+  }
+
+  private loadCertificationsData(certificationsData: any) {
+    console.log(certificationsData);
+    certificationsData.map((certification: any) => {
+      this.certifications.push({
+        title: certification.fields.title,
+        description: certification.fields.description,
+        entity: certification.fields.certificationEntity,
+        date: new Date(certification.fields.date),
+      })
+    });
+    this.certifications.sort((a, b) => {
+      const dateA = a.date;
+      const dateB = b.date;
+      return dateB.getTime() - dateA.getTime();
+    });
+  }
+
+
+  private loadSkillTags() {
+    const uniqueTags = new Set<string>();
+    this.skills.forEach((skill) => {
+      uniqueTags.add(skill.tag);
+    });
+    const tagOrder = ['front', 'back', 'design'];
+    const tagsArray = Array.from(uniqueTags);
+    
+    this.tags = tagsArray.sort((a, b) => {
+      if (a === 'others') return 1;
+      if (b === 'others') return -1;
+      
+      const indexA = tagOrder.indexOf(a);
+      const indexB = tagOrder.indexOf(b);
+      
+      if (indexA !== -1 && indexB !== -1) {
+        return indexA - indexB;
+      }
+      if (indexA !== -1) return -1;
+      if (indexB !== -1) return 1;
+      return a.localeCompare(b);
+    });
+  }
+
+  private groupSkillsByTag() {
+    this.groupedSkills = [];
+    this.tags.forEach((tag) => {
+      const skillsInTag = this.skills
+        .filter((skill) => skill.tag === tag)
+        .sort((a, b) => a.name.localeCompare(b.name));
+      this.groupedSkills.push({ tag, skills: skillsInTag });
+    });
+  }
+
+  private sortByEndDate<T extends { endDate?: Date }>(items: T[]) {
+      items.sort((a, b) => {
+        const endDateA = a.endDate ? a.endDate : new Date();
+        const endDateB = b.endDate ? b.endDate : new Date();
+        return endDateB.getTime() - endDateA.getTime();
+      });
+    }
+
 
   filterByCategory(category: string) {
     this.selectedCategory = category;
 
-    this.skills.forEach((skillCategory) => {
+    this.groupedSkills.forEach((skillCategory) => {
       skillCategory.skills.forEach((skill) => {
         const desiredPercentage = skill.percentage;
         skill.percentage = 0;

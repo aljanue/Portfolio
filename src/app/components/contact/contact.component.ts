@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SendingService } from '../../send-form.service';
+import { SendingService } from '../../services/send-form.service';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router'; // Importa Router
 

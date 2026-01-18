@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { Input } from '@angular/core';
 @Component({
   selector: 'app-about-card',
@@ -11,4 +11,14 @@ export class AboutCardComponent {
   @Input() title = '';
   @Input() img = '';
   @Input() description = '';
+  @Input() entity = '';
+  @Input() date: Date | null = null;
+
+  formatDate(date: Date) {
+    return new Intl.DateTimeFormat('en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric'
+    }).format(date);
+  }
 }

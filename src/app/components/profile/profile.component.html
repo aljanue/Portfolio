@@ -1,14 +1,36 @@
-<img src="../../assets/avatar.JPG" alt="avatar" />
+<img class="avatar" src="{{ profileImage || '../../assets/avatar.JPG' }}" alt="avatar" />
 <h1 class="text-xl font-semibold">{{ name }}</h1>
 <h2 class="job">{{ job }}</h2>
 <hr class="my-3" />
 <div class="flex gap-4 flex-col scroll-bar">
-  @for (item of info; track item.id) {
-    <app-profile-info
-      [info]="item.username"
-      [url]="item.url"
-      [icon]="item.icon"
-      [socialmedia]="item.socialmedia"
-    ></app-profile-info>
-  }
+<app-profile-info
+  [info]="email.email"
+  url="mailto:{{ email.email }}"
+  [icon]="email.icon"
+  socialmedia="EMAIL"
+></app-profile-info>
+<app-profile-info
+  [info]="linkedin.username"
+  [url]="linkedin.url"
+  [icon]="linkedin.icon"
+  socialmedia="LINKEDIN"
+></app-profile-info>
+<app-profile-info
+  [info]="github.username"
+  [url]="github.url"
+  [icon]="github.icon"
+  socialmedia="GITHUB"
+></app-profile-info>
+<app-profile-info
+  [info]="phone.phone"
+  url="tel:{{ phone.phone }}"
+  [icon]="phone.icon"
+  socialmedia="PHONE"
+></app-profile-info>
+<app-profile-info
+  [info]="formatBirthdayDate(birthday.birthday)"
+  url="#"
+  [icon]="birthday.icon"
+  socialmedia="BIRTHDAY"
+></app-profile-info>
 </div>
