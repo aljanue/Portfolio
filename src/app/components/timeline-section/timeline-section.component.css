@@ -44,7 +44,7 @@ ul {
 }
 
 .timeline-item:last-child::before {
-  height: 50%; /* Termina la línea en el último punto */
+  height: 50%;
 }
 
 .date {

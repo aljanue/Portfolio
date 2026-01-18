@@ -105,7 +105,6 @@ export class ResumeComponent {
 
   private loadHonoursData(honoursData: any) {
     honoursData.map((honour: any) => {
-      console.log(honour);
       this.honours.push({
         title: honour.fields.subject,
         description: honour.fields.description,
@@ -114,7 +113,6 @@ export class ResumeComponent {
   }
 
   private loadCertificationsData(certificationsData: any) {
-    console.log(certificationsData);
     certificationsData.map((certification: any) => {
       this.certifications.push({
         title: certification.fields.title,

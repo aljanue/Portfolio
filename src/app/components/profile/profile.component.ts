@@ -45,7 +45,6 @@ export class ProfileComponent {
   private loadData() {
     this.contentfulService.getPersonalInfo().subscribe({
       next: (entry) => {
-        console.log('Personal Info Entry:', entry);
         if (entry) {
           const info = entry[0].fields;
           this.name = info.name;

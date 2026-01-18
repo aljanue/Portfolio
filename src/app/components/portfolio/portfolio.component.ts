@@ -33,11 +33,9 @@ export class PortfolioComponent implements OnInit {
 private loadProjects() {
     this.contentfulService.getProjects().subscribe({
       next: (entry) => {
-        console.log('Personal Info Entry:', entry);
         const projectsMap = new Map<number, ProjectModel>();
         
         entry.forEach((project: any) => {
-          console.log('Project Entry:', project.fields);
           const projectData = project.fields;
           const newProject: ProjectModel = {
             id: projectData.id,
@@ -63,7 +61,7 @@ private loadProjects() {
 
         this.setRelatedProjects();
       },
-      error: (err) => console.error('Error fetching About:', err)
+      error: (err) => console.error('Error fetching projects:', err)
     });
   }
   private getDescriptions(descriptionField: string): string[] {

@@ -23,7 +23,7 @@ fs.writeFile(targetPath, envConfigFile, function (err) {
     console.error(err);
     throw err;
   }
-  console.log(`✅ Archivo generado: ${targetPath}`);
+  console.log(`✅ Generated file: ${targetPath}`);
 });
 
 fs.writeFile(targetPathProd, envConfigFile, function (err) {
@@ -31,5 +31,5 @@ fs.writeFile(targetPathProd, envConfigFile, function (err) {
     console.error(err);
     throw err;
   }
-  console.log(`✅ Archivo generado: ${targetPathProd}`);
+  console.log(`✅ Generated file: ${targetPathProd}`);
 });
