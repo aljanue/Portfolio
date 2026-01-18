@@ -1,11 +1,6 @@
 <div class="title-container mt-6">
   <div class="svg-container">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="30"
-      height="30"
-      viewBox="0 0 24 24"
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
       <path [attr.d]="img" />
     </svg>
   </div>
@@ -17,7 +12,10 @@
       <div>
         <h2 class="font-bold">{{ getTitle(item) }}</h2>
         <p class="date">{{ getPeriod(item) }}</p>
-        <p class="place">{{ getPlace(item) }}<span>{{ getCountry(item) }}</span></p>
+        <p class="place">
+          {{ getPlace(item) }}
+          <span>{{ getCountry(item) }}</span>
+        </p>
       </div>
     </li>
   }

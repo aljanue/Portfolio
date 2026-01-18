@@ -25,7 +25,7 @@ export class AboutComponent {
   private loadData() {
     forkJoin({
       doingCards: this.contentfulService.getDoingCards(),
-      aboutMe: this.contentfulService.getPersonalInfo()
+      aboutMe: this.contentfulService.getPersonalInfo(),
     }).subscribe(({ doingCards, aboutMe }) => {
       this.doing_cards = doingCards.map((item: any) => ({
         title: item.fields.title,

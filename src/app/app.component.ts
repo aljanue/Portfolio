@@ -15,7 +15,7 @@ import { DeviceDetectorService } from './services/device-detector.service';
 export class AppComponent implements OnInit {
   constructor(
     private router: Router,
-    private deviceDetectorService: DeviceDetectorService,
+    private deviceDetectorService: DeviceDetectorService
   ) {}
 
   ngOnInit() {

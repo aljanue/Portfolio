@@ -59,7 +59,7 @@
   font-weight: 700;
 }
 .active::after {
-  content: "";
+  content: '';
   display: block;
   width: 15px;
   height: 4px;

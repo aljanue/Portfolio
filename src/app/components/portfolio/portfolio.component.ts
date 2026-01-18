@@ -30,11 +30,11 @@ export class PortfolioComponent implements OnInit {
     this.loadProjects();
   }
 
-private loadProjects() {
+  private loadProjects() {
     this.contentfulService.getProjects().subscribe({
       next: (entry) => {
         const projectsMap = new Map<number, ProjectModel>();
-        
+
         entry.forEach((project: any) => {
           const projectData = project.fields;
           const newProject: ProjectModel = {
@@ -56,16 +56,21 @@ private loadProjects() {
           projectsMap.set(projectData.id, newProject);
           this.projects.push(newProject);
         });
-        
+
         this.categorizeProjects();
 
         this.setRelatedProjects();
       },
-      error: (err) => console.error('Error fetching projects:', err)
+      error: (err) => console.error('Error fetching projects:', err),
     });
   }
   private getDescriptions(descriptionField: string): string[] {
-    return descriptionField ? descriptionField.split("\\newparagraph").map(desc => desc.trim()).filter(desc => desc.length > 0) : [];
+    return descriptionField
+      ? descriptionField
+          .split('\\newparagraph')
+          .map((desc) => desc.trim())
+          .filter((desc) => desc.length > 0)
+      : [];
   }
 
   private categorizeProjects() {

@@ -6,12 +6,7 @@
 } @else {
   <div class="projects-tag mb-5">
     <ul>
-      <li
-        [class.active]="selectedCategory === 'All'"
-        (click)="filterByCategory('All')"
-      >
-        All
-      </li>
+      <li [class.active]="selectedCategory === 'All'" (click)="filterByCategory('All')">All</li>
       @for (category of categoriesWithProjects; track category.name) {
         <li
           [class.active]="selectedCategory === category.name"
@@ -20,16 +15,16 @@
           {{ category.name }}
         </li>
       }
-    </ul>   
+    </ul>
   </div>
   <div class="projects-container">
     @for (category of categoriesWithProjects; track category.name) {
-      @if (selectedCategory === "All" || selectedCategory === category.name) {
+      @if (selectedCategory === 'All' || selectedCategory === category.name) {
         @for (project of category.projects; track project.title) {
           <app-project
             [project]="project"
             (click)="selectProject(project)"
-            style="cursor: pointer;"
+            style="cursor: pointer"
           ></app-project>
         }
       }

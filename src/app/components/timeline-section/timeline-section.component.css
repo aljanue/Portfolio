@@ -23,7 +23,7 @@ ul {
 }
 
 .timeline-item::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 10px;
@@ -33,7 +33,7 @@ ul {
 }
 
 .timeline-item::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 50%;
   left: 6px;

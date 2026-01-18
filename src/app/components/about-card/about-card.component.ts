@@ -18,7 +18,7 @@ export class AboutCardComponent {
     return new Intl.DateTimeFormat('en-US', {
       year: 'numeric',
       month: 'short',
-      day: 'numeric'
+      day: 'numeric',
     }).format(date);
   }
 }

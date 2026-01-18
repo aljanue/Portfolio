@@ -1,10 +1,6 @@
 <h1 class="title-section">{{ title }}</h1>
 <div class="sep"></div>
-<form
-  class="flex flex-col"
-  action="https://api.web3forms.com/submit"
-  method="POST"
->
+<form class="flex flex-col" action="https://api.web3forms.com/submit" method="POST">
   <label for="name">Name</label>
   <input type="text" id="name" name="name" required />
   <label for="email">Email</label>
@@ -26,9 +22,5 @@
 
   <input type="hidden" name="from_name" value="Portfolio" />
   <input type="hidden" name="redirect" value="{{ currentUrl }}" />
-  <input
-    type="hidden"
-    name="apikey"
-    value="04824499-3257-46e6-8581-f0c9921f1519"
-  />
+  <input type="hidden" name="apikey" value="04824499-3257-46e6-8581-f0c9921f1519" />
 </form>

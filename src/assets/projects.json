@@ -13,11 +13,7 @@
           "La aplicación cuenta con un sistema de puntuación dinámico, diferentes niveles de dificultad y una interfaz intuitiva que hace que el aprendizaje sea entretenido. Incluye temporizador para cada pregunta y feedback inmediato sobre respuestas correctas e incorrectas.",
           "Desarrollado con tecnologías web modernas, el proyecto demuestra conceptos clave como gestión de estado, manipulación del DOM y almacenamiento local para mantener el progreso del usuario."
         ],
-        "images": [
-          "assets/img/cdec.png",
-          "assets/img/catchef.png",
-          "assets/img/nocuk.png"
-        ]
+        "images": ["assets/img/cdec.png", "assets/img/catchef.png", "assets/img/nocuk.png"]
       },
       {
         "id": 2,

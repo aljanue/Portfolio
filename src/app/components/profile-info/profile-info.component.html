@@ -1,4 +1,4 @@
-@if (socialmedia == "email") {
+@if (socialmedia == 'email') {
   <a class="info-container" href="mailto:{{ info }}">
     <div class="icon">
       <svg
@@ -17,7 +17,7 @@
       <p class="name">{{ info }}</p>
     </div>
   </a>
-} @else if (url == "") {
+} @else if (url == '') {
   <div class="info-container">
     <div class="icon">
       <svg

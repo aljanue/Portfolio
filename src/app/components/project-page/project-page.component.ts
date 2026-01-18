@@ -1,4 +1,12 @@
-import { Component, Input, Output, EventEmitter, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  OnInit,
+  OnChanges,
+  SimpleChanges,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProjectModel, CategoryModel } from '../../models/project';
 import { ProjectComponent } from '../project/project.component';
@@ -8,12 +16,11 @@ import { ProjectComponent } from '../project/project.component';
   standalone: true,
   imports: [CommonModule, ProjectComponent],
   templateUrl: './project-page.component.html',
-  styleUrls: ['./project-page.component.css']
+  styleUrls: ['./project-page.component.css'],
 })
 export class ProjectPageComponent {
   @Input() data?: ProjectModel | null;
   @Output() back = new EventEmitter<void>();
-  
 
   constructor() {}
 
@@ -32,20 +39,20 @@ export class ProjectPageComponent {
     const hasVideos = this.data?.videos && this.data.videos.length > 0;
     return !!(hasDescriptions || hasImages || hasVideos);
   }
-  
+
   getContentItems(): Array<{ type: 'description' | 'images-row'; content: any }> {
     const items: Array<{ type: 'description' | 'images-row'; content: any }> = [];
-    
+
     const descriptions = this.data?.descriptions || [];
     const images = this.data?.images || [];
-    
+
     const maxLength = Math.max(descriptions.length, Math.ceil(images.length / 2));
-    
+
     for (let i = 0; i < maxLength; i++) {
       if (i < descriptions.length) {
         items.push({ type: 'description', content: descriptions[i] });
       }
-      
+
       const imageIndex = i * 2;
       if (imageIndex < images.length) {
         const imageRow = [images[imageIndex]];
@@ -55,7 +62,7 @@ export class ProjectPageComponent {
         items.push({ type: 'images-row', content: imageRow });
       }
     }
-    
+
     return items;
   }
 }

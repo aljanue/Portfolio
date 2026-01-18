@@ -14,21 +14,23 @@ export class TimelineSectionComponent {
   @Input() img = '';
   @Input() timeline: ExperienceItem[] | EducationItem[] = [];
 
-  getCountry(item: ExperienceItem|EducationItem) {
+  getCountry(item: ExperienceItem | EducationItem) {
     return 'country' in item ? ` (${item.country})` : '';
   }
 
-  getPlace(item: ExperienceItem|EducationItem) {
+  getPlace(item: ExperienceItem | EducationItem) {
     return 'school' in item ? item.school : item.company;
   }
 
-  getPeriod(item: ExperienceItem|EducationItem) {
-    return item.endDate ? `${this.formatDateMonthYear(item.initDate)} - ${this.formatDateMonthYear(item.endDate)}` : `${this.formatDateMonthYear(item.initDate)} - Now`;
+  getPeriod(item: ExperienceItem | EducationItem) {
+    return item.endDate
+      ? `${this.formatDateMonthYear(item.initDate)} - ${this.formatDateMonthYear(item.endDate)}`
+      : `${this.formatDateMonthYear(item.initDate)} - Now`;
   }
 
-  getTitle(item: ExperienceItem|EducationItem) {
+  getTitle(item: ExperienceItem | EducationItem) {
     return 'degree' in item ? item.degree : item.role;
-  } 
+  }
 
   private formatDateMonthYear(date: Date): string {
     return date.toLocaleString('en-US', { month: 'long', year: 'numeric' });

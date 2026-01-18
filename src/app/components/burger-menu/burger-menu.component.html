@@ -1,10 +1,5 @@
 <div class="svg-container" (click)="toggleMenu()">
-  <svg
-    [class.active]="menuOpen"
-    class="ham hamRotate ham8"
-    viewBox="0 0 100 100"
-    width="45"
-  >
+  <svg [class.active]="menuOpen" class="ham hamRotate ham8" viewBox="0 0 100 100" width="45">
     <path
       class="line top"
       d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"
@@ -19,44 +14,37 @@
 @if (menuOpen) {
   <ul class="opened">
     <li (click)="toggleMenu()">
-      <a
-        routerLink="/home"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        >Home</a
-      >
+      <a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        Home
+      </a>
     </li>
     <li (click)="toggleMenu()">
-      <a
-        routerLink="/about"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        >About</a
-      >
+      <a routerLink="/about" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        About
+      </a>
     </li>
     <li (click)="toggleMenu()">
-      <a
-        routerLink="/resume"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        >Resume</a
-      >
+      <a routerLink="/resume" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        Resume
+      </a>
     </li>
     <li (click)="toggleMenu()">
       <a
         routerLink="/portfolio"
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }"
-        >Portfolio</a
       >
+        Portfolio
+      </a>
     </li>
     <li (click)="toggleMenu()">
       <a
         routerLink="/contact"
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }"
-        >Contact</a
       >
+        Contact
+      </a>
     </li>
   </ul>
 } @else {

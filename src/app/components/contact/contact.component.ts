@@ -17,7 +17,7 @@ export class ContactComponent {
   constructor(
     private sendingService: SendingService,
     private location: Location,
-    private router: Router,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -25,8 +25,7 @@ export class ContactComponent {
       this.sendForm();
     }
     this.currentUrl =
-      window.location.origin +
-      this.router.createUrlTree(['/check-form']).toString();
+      window.location.origin + this.router.createUrlTree(['/check-form']).toString();
   }
 
   change(): void {
@@ -38,12 +37,7 @@ export class ContactComponent {
 
       const emailRegex = /^[^\s@]+@[^\s@]+$/;
 
-      if (
-        name.value &&
-        emailRegex.test(email.value) &&
-        subject.value &&
-        message.value
-      ) {
+      if (name.value && emailRegex.test(email.value) && subject.value && message.value) {
         this.sendingService.setSending(true);
         this.sendForm();
       }
@@ -57,8 +51,7 @@ export class ContactComponent {
     if (container && hoverAnimation && continue_s) {
       container.classList.toggle('active');
       hoverAnimation.textContent = 'Sending';
-      continue_s.textContent =
-        'You can continue viewing my portfolio while it is being sent :)';
+      continue_s.textContent = 'You can continue viewing my portfolio while it is being sent :)';
     }
   }
 }

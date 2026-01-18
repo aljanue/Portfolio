@@ -1,93 +1,106 @@
 <div class="project-container">
-    <div class="project-container-title">
-        <div class="project-title">
-            <div class="back-button" (click)="onBack()">
-                <svg class="back-arrow" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m9.474 5.209s-4.501 4.505-6.254 6.259c-.147.146-.22.338-.22.53s.073.384.22.53c1.752 1.754 6.252 6.257 6.252 6.257.145.145.336.217.527.217.191-.001.383-.074.53-.221.293-.293.294-.766.004-1.057l-4.976-4.976h14.692c.414 0 .75-.336.75-.75s-.336-.75-.75-.75h-14.692l4.978-4.979c.289-.289.287-.761-.006-1.054-.147-.147-.339-.221-.53-.221-.191-.001-.38.071-.525.215z" fill-rule="nonzero"/></svg>           
-                <p class="back-text">Back to Portfolio</p>
-            </div>
-            <h2 class="">{{ data?.title }}</h2>
-        </div>
-        
-        <div class="project-tags">
-            @for(tag of data?.tags; track tag) {
-                <span class="project-tag">{{ tag }}</span>
-            }
-        </div>
+  <div class="project-container-title">
+    <div class="project-title">
+      <div class="back-button" (click)="onBack()">
+        <svg
+          class="back-arrow"
+          clip-rule="evenodd"
+          fill-rule="evenodd"
+          stroke-linejoin="round"
+          stroke-miterlimit="2"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m9.474 5.209s-4.501 4.505-6.254 6.259c-.147.146-.22.338-.22.53s.073.384.22.53c1.752 1.754 6.252 6.257 6.252 6.257.145.145.336.217.527.217.191-.001.383-.074.53-.221.293-.293.294-.766.004-1.057l-4.976-4.976h14.692c.414 0 .75-.336.75-.75s-.336-.75-.75-.75h-14.692l4.978-4.979c.289-.289.287-.761-.006-1.054-.147-.147-.339-.221-.53-.221-.191-.001-.38.071-.525.215z"
+            fill-rule="nonzero"
+          />
+        </svg>
+        <p class="back-text">Back to Portfolio</p>
+      </div>
+      <h2 class="">{{ data?.title }}</h2>
     </div>
-    @if(!hasContent()) {
-            <div class="no-content-message">
-                <p>No content available for this project.</p>
-            </div>
-        }
-    @else {
+
+    <div class="project-tags">
+      @for (tag of data?.tags; track tag) {
+        <span class="project-tag">{{ tag }}</span>
+      }
+    </div>
+  </div>
+  @if (!hasContent()) {
+    <div class="no-content-message">
+      <p>No content available for this project.</p>
+    </div>
+  } @else {
     <div class="project-content">
-        @if(data?.videos && data?.videos!.length > 0) {
-            <div class="content-row video-row">
-                <div class="content-video">
-                    <video controls autoplay [src]="data?.videos![0]"></video>
-                </div>
-            </div>
-        }
-        @for(item of getContentItems(); let i = $index; track i) {
-            @if(item.type === 'description') {
-                <div class="content-row description-row">
-                    <div class="content-text">
-                        <p>{{ item.content }}</p>
-                    </div>
-                </div>
-            }
-            @if(item.type === 'images-row') {
-                <div class="content-row images-row">
-                    @for(image of item.content; track image) {
-                        <div class="content-image">
-                            <img [src]="image" [alt]="data?.title" />
-                        </div>
-                    }
-                </div>
-            }  
-        }
-        @if(data?.videos && data?.videos!.length > 1) {
-                <!-- show other videos -->
-                 @for(video of data?.videos!.slice(1); track video) {
-                    <div class="content-row video-row">
-                        <div class="content-video">
-                            <video controls [src]="video"></video>
-                        </div>
-                    </div>
-                 }
-            }
-            @if(data?.repoLink) {
-                <div class="content-row link-row">
-                    <div class="content-text">
-                        <p>Check out the repository here: <a [href]="data?.repoLink" target="_blank" rel="noopener">{{ data?.repoLink }}</a></p>
-                    </div>
-                </div>
-            }
-            @if(data?.projectLink) {
-                <div class="content-row link-row">
-                    <div class="content-text">
-                        <p>Visit the project website: <a [href]="data?.projectLink" target="_blank" rel="noopener">{{ data?.projectLink }}</a></p>
-                    </div>
-                </div>
-            }
-    </div>
-
-    }
-
-    @if(data && data.relatedProjects && data.relatedProjects!.length > 0) {
-        <div class="related-projects-section">
-            <h3 class="related-projects-title">Related {{ data.category }} projects</h3>
-            <div class="related-projects-container">
-                @for(project of data.relatedProjects; track project.id) {
-                    <app-project
-                        [project]="project"
-                        (click)="selectRelatedProject(project)"
-                    ></app-project>
-                }
-            </div>
+      @if (data?.videos && data?.videos!.length > 0) {
+        <div class="content-row video-row">
+          <div class="content-video">
+            <video controls autoplay [src]="data?.videos![0]"></video>
+          </div>
         </div>
-    }
+      }
+      @for (item of getContentItems(); let i = $index; track i) {
+        @if (item.type === 'description') {
+          <div class="content-row description-row">
+            <div class="content-text">
+              <p>{{ item.content }}</p>
+            </div>
+          </div>
+        }
+        @if (item.type === 'images-row') {
+          <div class="content-row images-row">
+            @for (image of item.content; track image) {
+              <div class="content-image">
+                <img [src]="image" [alt]="data?.title" />
+              </div>
+            }
+          </div>
+        }
+      }
+      @if (data?.videos && data?.videos!.length > 1) {
+        <!-- show other videos -->
+        @for (video of data?.videos!.slice(1); track video) {
+          <div class="content-row video-row">
+            <div class="content-video">
+              <video controls [src]="video"></video>
+            </div>
+          </div>
+        }
+      }
+      @if (data?.repoLink) {
+        <div class="content-row link-row">
+          <div class="content-text">
+            <p>
+              Check out the repository here:
+              <a [href]="data?.repoLink" target="_blank" rel="noopener">{{ data?.repoLink }}</a>
+            </p>
+          </div>
+        </div>
+      }
+      @if (data?.projectLink) {
+        <div class="content-row link-row">
+          <div class="content-text">
+            <p>
+              Visit the project website:
+              <a [href]="data?.projectLink" target="_blank" rel="noopener">
+                {{ data?.projectLink }}
+              </a>
+            </p>
+          </div>
+        </div>
+      }
+    </div>
+  }
+
+  @if (data && data.relatedProjects && data.relatedProjects!.length > 0) {
+    <div class="related-projects-section">
+      <h3 class="related-projects-title">Related {{ data.category }} projects</h3>
+      <div class="related-projects-container">
+        @for (project of data.relatedProjects; track project.id) {
+          <app-project [project]="project" (click)="selectRelatedProject(project)"></app-project>
+        }
+      </div>
+    </div>
+  }
 </div>
-
-
-

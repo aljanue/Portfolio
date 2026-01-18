@@ -12,8 +12,8 @@ if (!fs.existsSync(dir)) {
 const envConfigFile = `export const environment = {
   production: ${process.env.NODE_ENV === 'production'},
   contentful: {
-    spaceId: '${process.env.CONTENTFUL_SPACE_ID || ""}',
-    accessToken: '${process.env.CONTENTFUL_ACCESS_TOKEN || ""}'
+    spaceId: '${process.env.CONTENTFUL_SPACE_ID || ''}',
+    accessToken: '${process.env.CONTENTFUL_ACCESS_TOKEN || ''}'
   }
 };
 `;

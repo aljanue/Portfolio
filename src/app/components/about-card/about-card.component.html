@@ -1,17 +1,19 @@
-@if (img != "") {
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="60"
-    height="60"
-    viewBox="0 0 24 24"
-  >
+@if (img != '') {
+  <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24">
     <path [attr.d]="img" />
   </svg>
 }
 <div class="card-content">
   <div class="text">
     <h3>{{ title }}</h3>
-    <p>@if(entity) {<span class="entity">Certified by {{ entity }}. </span>}{{ description }}</p>
+    <p>
+      @if (entity) {
+        <span class="entity">Certified by {{ entity }}.</span>
+      }
+      {{ description }}
+    </p>
   </div>
-  @if(date) {<span class="date">{{ formatDate(date) }}</span>}
+  @if (date) {
+    <span class="date">{{ formatDate(date) }}</span>
+  }
 </div>

@@ -18,5 +18,5 @@ export const routes: Routes = [
   { path: 'home', component: ProfileComponent },
   { path: 'project/:id', redirectTo: '/portfolio/:id' },
   { path: 'not-found', component: NotFoundComponent },
-  { path: '**', component: NotFoundComponent }
+  { path: '**', component: NotFoundComponent },
 ];

@@ -9,7 +9,7 @@
   --color-text-secondary: #888;
 }
 body {
-    background-color: #111;
+  background-color: #111;
 }
 app-root {
   background-color: #111;
@@ -30,11 +30,7 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background: rgb(
-    32,
-    32,
-    32
-  ); /* Color de la pista de la barra de desplazamiento */
+  background: rgb(32, 32, 32); /* Color de la pista de la barra de desplazamiento */
 }
 
 body::-webkit-scrollbar-thumb {
@@ -83,8 +79,7 @@ app-portfolio .title-section.animated {
 }
 app-about > *:not(.title-section):not(.sep),
 app-resume > *:not(.title-section):not(.sep),
-app-portfolio
-  > *:not(.title-section):not(.sep):not(.projects-container):not(app-project),
+app-portfolio > *:not(.title-section):not(.sep):not(.projects-container):not(app-project),
 app-contact > *:not(.title-section):not(.sep) {
   opacity: 0;
   animation: fade-open 2s forwards ease;

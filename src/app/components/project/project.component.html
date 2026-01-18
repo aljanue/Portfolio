@@ -20,7 +20,7 @@
 <div class="px-6 pb-4" role="button" tabindex="0">
   <h1>{{ project.title }}</h1>
   <div class="flex gap-3 flex-wrap">
-    @for (tag of (project.tags); track tag) {
+    @for (tag of project.tags; track tag) {
       <span class="tag">{{ tag }}</span>
     }
   </div>
