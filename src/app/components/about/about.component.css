@@ -1,6 +1,8 @@
 p {
   text-align: justify;
-  font-style: italic;
+  font-weight: light;
+  line-height: 1.6;
+  font-size: 1.1rem;
 }
 h2 {
   padding: 20px 0;
