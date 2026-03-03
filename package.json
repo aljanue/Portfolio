@@ -1,6 +1,9 @@
 {
   "name": "porfolio-aljanue",
   "version": "0.0.0",
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
     "ng": "ng",
     "start": "node set-env.js && ng serve",
