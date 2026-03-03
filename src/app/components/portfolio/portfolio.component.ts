@@ -52,6 +52,7 @@ export class PortfolioComponent implements OnInit {
             images: projectData.images
               ? projectData.images.map((img: any) => img.fields.file.url)
               : [],
+            isSpecial: projectData.isSpecial || false,
           };
           projectsMap.set(projectData.id, newProject);
           this.projects.push(newProject);

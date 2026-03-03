@@ -28,7 +28,7 @@
   <div class="info-container">
     <h2 class="title-container">Certifications</h2>
     <div class="card-container">
-      @for (certification of certifications; track $index) {
+      @for (certification of initialCertifications; track $index) {
         <app-about-card
           class="w-full"
           [title]="certification.title"
@@ -38,6 +38,44 @@
         ></app-about-card>
       }
     </div>
+    @if (certifications.length > 4) {
+      <div class="expand-wrapper" [class.expanded]="showAllCertifications">
+        <div class="expand-inner">
+          <div class="card-container extra-certs">
+            @for (certification of extraCertifications; track $index) {
+              <app-about-card
+                class="w-full"
+                [title]="certification.title"
+                [description]="certification.description || ''"
+                [entity]="certification.entity"
+                [date]="certification.date"
+              ></app-about-card>
+            }
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-center">
+        <button class="pseudo-btn" (click)="toggleCertifications()">
+          <span>{{ showAllCertifications ? 'Show Less' : 'Show More' }}</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="chevron-icon"
+            [class.rotated]="showAllCertifications"
+          >
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+      </div>
+    }
   </div>
   <div class="info-container">
     <h2 class="title-container">My Skills</h2>

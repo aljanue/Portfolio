@@ -38,6 +38,8 @@ export class ResumeComponent {
   honours: Honour[] = [];
 
   certifications: Certification[] = [];
+  showAllCertifications = false;
+
 
   constructor(private contentfulService: ContentfulService) {}
 
@@ -183,5 +185,17 @@ export class ResumeComponent {
         }, 500);
       });
     });
+  }
+
+  get initialCertifications(): Certification[] {
+    return this.certifications.slice(0, 4);
+  }
+
+  get extraCertifications(): Certification[] {
+    return this.certifications.slice(4);
+  }
+
+  toggleCertifications() {
+    this.showAllCertifications = !this.showAllCertifications;
   }
 }

@@ -19,7 +19,7 @@
 .info-container {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 8px;
 }
 
 .skill {
@@ -55,6 +55,7 @@
 .active {
   background: linear-gradient(to right, #ff9d00, var(--color-brown));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 700;
 }
@@ -96,4 +97,55 @@
   .p-end-13 {
     padding-right: 3rem;
   }
+}
+.expand-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.expand-wrapper.expanded {
+  grid-template-rows: 1fr;
+}
+
+.expand-inner {
+  overflow: hidden;
+}
+
+.extra-certs {
+  margin-top: 20px;
+}
+
+.pseudo-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--color-text-secondary);
+  border: none;
+  cursor: pointer;
+  padding: 8px 16px;
+  font-weight: light;
+  transition: all 300ms ease-in-out;
+  font-size: 0.9rem;
+}
+
+.pseudo-btn:hover {
+  color: var(--color-text);
+  transform: scale(1.01);
+  font-weight: 600;
+}
+
+.chevron-icon {
+  transition: transform 300ms ease-in-out;
+  color: var(--color-text-secondary);
+}
+.pseudo-btn:hover .chevron-icon {
+  color: var(--color-text);
+  transform: scale(1.01) translateY(1px);
+}
+
+
+.chevron-icon.rotated {
+  transform: rotate(180deg);
 }

@@ -1,4 +1,21 @@
-<div class="img-container" role="button" tabindex="0">
+<div class="img-container" [class.special-highlight]="project.isSpecial" role="button" tabindex="0">
+  @if (project.isSpecial) {
+    <div class="special-badge">
+      <span class="special-text">Featured Project</span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="var(--color-brown)"
+        class="sparkle-icon"
+      >
+        <path
+          d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01L12 2z"
+        />
+      </svg>
+    </div>
+  }
   <img [src]="project.portrait" [alt]="project.title" />
   <div class="hover flex items-center justify-center">
     <a>
@@ -19,7 +36,7 @@
 </div>
 <div class="px-6 pb-4" role="button" tabindex="0">
   <h1>{{ project.title }}</h1>
-  <div class="flex gap-3 flex-wrap">
+  <div class="flex gap-x-3 gap-y-1 flex-wrap">
     @for (tag of project.tags; track tag) {
       <span class="tag">{{ tag }}</span>
     }

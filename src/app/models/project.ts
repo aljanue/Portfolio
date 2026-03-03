@@ -9,6 +9,7 @@ export interface ProjectModel {
   videos: string[];
   images: string[];
   category: string;
+  isSpecial?: boolean;
   relatedProjects?: ProjectModel[];
 }
 
